@@ -1,4 +1,3 @@
-from PyQt5 import QtCore, QtGui, QtWidgets
 from socket import *
 
 from PyQt5.QtGui import QPixmap
@@ -7,16 +6,14 @@ from ui_mainwindow import *
 import json
 import hashlib
 
+
 class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(Loginwindow, self).__init__(parent)
         self.setupUi(self)
 
         self.loginbutton.clicked.connect(self.send_login_info)
-        pixmap=QPixmap("img/logo2.jpg")
-        scared_pixmap = pixmap.scaled(400, 400, aspectRatioMode=Qt.KeepAspectRatio)
-        self.head.setScaledContents(True)
-        self.head.setPixmap(scared_pixmap)
+
 
     def send_login_info(self):
         _translate = QtCore.QCoreApplication.translate

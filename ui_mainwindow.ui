@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>248</width>
-    <height>294</height>
+    <width>980</width>
+    <height>650</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>980</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -23,72 +29,71 @@
    <widget class="QPushButton" name="loginbutton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>250</y>
+      <x>710</x>
+      <y>370</y>
       <width>51</width>
-      <height>31</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QPushButton#loginbutton
+     <string notr="true">
+QPushButton#loginbutton
 {
-    color:white;
-    background-color:rgb(14 , 150 , 254);
+    font:48pt,black;
+    background-color:white;
     border-radius:5px;
 }
 
 QPushButton#loginbutton:hover
 {
-    color:white;
-    background-color:rgb(44 , 137 , 255);
+   font:48pt,rgb(0, 172, 230);
+    background-color:white;
 }
 
 QPushButton#loginbutton:pressed
 {
-    color:white;
-    background-color:rgb(14 , 135 , 228);
+   font:48pt,rgb(0, 172, 230);
+    background-color:white;
     padding-left:3px;
     padding-top:3px;
-}</string>
+}
+
+</string>
     </property>
     <property name="text">
-     <string>登陆</string>
+     <string>→</string>
     </property>
    </widget>
    <widget class="QLabel" name="logo_title">
     <property name="geometry">
      <rect>
-      <x>80</x>
-      <y>10</y>
-      <width>81</width>
+      <x>400</x>
+      <y>200</y>
+      <width>221</width>
       <height>41</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 36pt &quot;Heiti SC&quot;,rgb(30, 30, 30)</string>
     </property>
     <property name="text">
      <string>森普网上商城</string>
     </property>
    </widget>
-   <widget class="QLabel" name="head">
-    <property name="geometry">
-     <rect>
-      <x>80</x>
-      <y>50</y>
-      <width>81</width>
-      <height>71</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLineEdit" name="pw_text">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>180</y>
-      <width>181</width>
-      <height>31</height>
+      <x>340</x>
+      <y>360</y>
+      <width>341</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;border-width:0;border-style:outset;
+font: 18pt &quot;Heiti SC&quot;;
+
+</string>
     </property>
     <property name="maxLength">
      <number>16</number>
@@ -103,34 +108,21 @@ QPushButton#loginbutton:pressed
    <widget class="QLineEdit" name="id_text">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>140</y>
-      <width>181</width>
-      <height>31</height>
+      <x>340</x>
+      <y>280</y>
+      <width>341</width>
+      <height>51</height>
      </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:transparent;border-width:0;border-style:outset;
+font: 18pt &quot;Heiti SC&quot;;</string>
     </property>
     <property name="maxLength">
      <number>16</number>
     </property>
     <property name="placeholderText">
      <string>账户名/手机号</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="login_state_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>220</y>
-      <width>181</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">text-align:center
-</string>
-    </property>
-    <property name="text">
-     <string/>
     </property>
    </widget>
   </widget>
