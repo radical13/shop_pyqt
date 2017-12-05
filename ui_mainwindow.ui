@@ -125,6 +125,54 @@ font: 18pt &quot;Heiti SC&quot;;</string>
      <string>账户名/手机号</string>
     </property>
    </widget>
+   <widget class="QPushButton" name="see_pw">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>360</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#see_pw
+{
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#see_pw:hover
+{
+  
+    background-color:white;
+}
+
+QPushButton#see_pw:pressed
+{
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="net_error">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>450</y>
+      <width>350</width>
+      <height>150</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>

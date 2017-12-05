@@ -62,6 +62,34 @@ class Ui_MainWindow(object):
 "font: 18pt \"Heiti SC\";")
         self.id_text.setMaxLength(16)
         self.id_text.setObjectName("id_text")
+        self.see_pw = QtWidgets.QPushButton(self.centralWidget)
+        self.see_pw.setGeometry(QtCore.QRect(630, 360, 51, 51))
+        self.see_pw.setStyleSheet("QPushButton#see_pw\n"
+"{\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#see_pw:hover\n"
+"{\n"
+"  \n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#see_pw:pressed\n"
+"{\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.see_pw.setText("")
+        self.see_pw.setObjectName("see_pw")
+        self.net_error = QtWidgets.QLabel(self.centralWidget)
+        self.net_error.setGeometry(QtCore.QRect(360, 450, 350, 150))
+        self.net_error.setText("")
+        self.net_error.setObjectName("net_error")
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)

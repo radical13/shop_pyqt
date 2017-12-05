@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>981</width>
-    <height>646</height>
+    <height>678</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,8 +20,8 @@
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>20</y>
+     <x>450</x>
+     <y>40</y>
      <width>131</width>
      <height>71</height>
     </rect>
@@ -59,7 +59,7 @@
   <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>190</x>
      <y>30</y>
      <width>113</width>
      <height>32</height>
@@ -72,17 +72,26 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>180</x>
-     <y>140</y>
-     <width>77</width>
+     <x>280</x>
+     <y>160</y>
+     <width>101</width>
      <height>421</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_2">
     <item>
      <widget class="QLabel" name="shop_name_1">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;
+
+
+</string>
+      </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -91,12 +100,18 @@
       <property name="text">
        <string/>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_name_3">
       <property name="text">
        <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -105,40 +120,22 @@
       <property name="text">
        <string/>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_name_4">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;
+</string>
+      </property>
       <property name="text">
        <string/>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_name_6">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_name_7">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_name_8">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_name_9">
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -147,80 +144,63 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>300</x>
-     <y>140</y>
-     <width>62</width>
+     <x>410</x>
+     <y>160</y>
+     <width>91</width>
      <height>421</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_3">
     <item>
      <widget class="QLabel" name="shop_id_1">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_id_2">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_id_3">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_id_4">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_id_5">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_id_6">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_id_7">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_id_8">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_id_9">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_id_10">
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -229,80 +209,63 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>420</x>
-     <y>140</y>
-     <width>62</width>
+     <x>520</x>
+     <y>160</y>
+     <width>101</width>
      <height>421</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
-     <widget class="QLabel" name="shop_owner_2">
+     <widget class="QLabel" name="shop_owner_1">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QLabel" name="shop_owner_6">
+     <widget class="QLabel" name="shop_owner_2">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_owner_3">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_owner_4">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
     <item>
      <widget class="QLabel" name="shop_owner_5">
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_owner_7">
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_owner_8">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_owner_9">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_owner_10">
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLabel" name="shop_owner_11">
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </item>
@@ -311,15 +274,40 @@
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>140</y>
-     <width>113</width>
-     <height>431</height>
+     <x>680</x>
+     <y>160</y>
+     <width>75</width>
+     <height>421</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QPushButton" name="enter_shop_1">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton#enter_shop_1
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_1:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_1:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+      </property>
       <property name="text">
        <string>→</string>
       </property>
@@ -327,6 +315,31 @@
     </item>
     <item>
      <widget class="QPushButton" name="enter_shop_2">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton#enter_shop_2
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_2:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_2:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+      </property>
       <property name="text">
        <string>→</string>
       </property>
@@ -334,6 +347,31 @@
     </item>
     <item>
      <widget class="QPushButton" name="enter_shop_3">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton#enter_shop_3
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_3:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_3:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+      </property>
       <property name="text">
        <string>→</string>
       </property>
@@ -341,6 +379,31 @@
     </item>
     <item>
      <widget class="QPushButton" name="enter_shop_4">
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton#enter_shop_4
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_4:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_4:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+      </property>
       <property name="text">
        <string>→</string>
       </property>
@@ -348,41 +411,31 @@
     </item>
     <item>
      <widget class="QPushButton" name="enter_shop_5">
-      <property name="text">
-       <string>→</string>
+      <property name="styleSheet">
+       <string notr="true">
+QPushButton#enter_shop_5
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_5:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_5:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
       </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_6">
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_7">
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_8">
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_9">
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_10">
       <property name="text">
        <string>→</string>
       </property>
@@ -390,12 +443,12 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
-     <x>190</x>
-     <y>100</y>
-     <width>331</width>
+     <x>290</x>
+     <y>120</y>
+     <width>371</width>
      <height>31</height>
     </rect>
    </property>
@@ -416,7 +469,7 @@
        <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
       </property>
       <property name="text">
-       <string>店铺ID</string>
+       <string>     ID</string>
       </property>
      </widget>
     </item>
@@ -426,7 +479,7 @@
        <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
       </property>
       <property name="text">
-       <string>拥有者</string>
+       <string>店  主</string>
       </property>
      </widget>
     </item>

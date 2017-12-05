@@ -1,22 +1,31 @@
 from socket import *
 
-from PyQt5.QtGui import QPixmap
+from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from ui_mainwindow import *
+from shoplistwindow import ShoplistWindow
 import json
 import hashlib
+import time
 
 
 class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(Loginwindow, self).__init__(parent)
         self.setupUi(self)
-
         self.loginbutton.clicked.connect(self.send_login_info)
 
+        icon_see = QIcon("img/see.png")
+        self.see_pw.setIcon(icon_see)
+        self.see_pw.setIconSize(QSize(20,20))
+        self.see_pw.show()
+
+        self.see_pw.clicked.connect(self.seepw)
 
     def send_login_info(self):
+
         _translate = QtCore.QCoreApplication.translate
+        loading_img = QPixmap("img/loading.png")
         user_id = self.id_text.text()
         user_pw = self.pw_text.text()
         if user_id == "":
@@ -31,15 +40,39 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
         host = '118.89.178.152'
         port = 60000
         info_socket = socket(AF_INET, SOCK_DGRAM)
-        info = [{'id': user_id, 'pw': user_pw_md5}]
+
+        info = [{"id": user_id, "pw": user_pw_md5}]
         message = json.dumps(info)
         if info_socket.connect((host, port)) == 0:
-            self.login_state_2.setText("网络错误，请重试！")
+            pixmap = QPixmap("img/neterror.png")
+            self.net_error.setPixmap(pixmap)
             return
         while True:
             info_socket.sendall(message.encode(encoding='utf-8'))
-            data = info_socket.recv(1024)
-            if data != "":
-                print(data)
+            try:
+                data = info_socket.recv(1024)
+            except IOError:
+                pixmap = QPixmap("img/neterror.png")
+                self.net_error.setPixmap(pixmap)
                 break
+
+            if data == b"SUCCESS":
+                self.shoplist_window = ShoplistWindow()
+                self.close()
+                self.shoplist_window.show()
+                break
+
+            if data == b"FAIL":
+                pixmap = QPixmap("img/wrong_pw.png")
+                self.net_error.setPixmap(pixmap)
+                break
+
+            if data == b"NO_USER":
+                pixmap = QPixmap("img/wrong_id.png")
+                self.net_error.setPixmap(pixmap)
+                break
+
+
         info_socket.close()
+    def seepw(self):
+        self.pw_text.setEchoMode(0)
