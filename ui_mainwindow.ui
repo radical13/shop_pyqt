@@ -68,13 +68,13 @@ QPushButton#loginbutton:pressed
     <property name="geometry">
      <rect>
       <x>400</x>
-      <y>200</y>
+      <y>170</y>
       <width>221</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 36pt &quot;Heiti SC&quot;,rgb(30, 30, 30)</string>
+     <string notr="true">font: 75 36pt &quot;Heiti SC&quot;;</string>
     </property>
     <property name="text">
      <string>森普网上商城</string>

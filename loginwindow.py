@@ -71,8 +71,7 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 pixmap = QPixmap("img/wrong_id.png")
                 self.net_error.setPixmap(pixmap)
                 break
-
-
         info_socket.close()
+
     def seepw(self):
         self.pw_text.setEchoMode(0)

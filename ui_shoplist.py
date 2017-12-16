@@ -14,20 +14,37 @@ class Ui_Form(object):
         Form.resize(981, 678)
         Form.setStyleSheet("background:white;\n"
 "")
-        self.label = QtWidgets.QLabel(Form)
-        self.label.setGeometry(QtCore.QRect(350, 20, 131, 71))
-        self.label.setObjectName("label")
-        self.label_2 = QtWidgets.QLabel(Form)
-        self.label_2.setGeometry(QtCore.QRect(10, 10, 81, 21))
-        self.label_2.setObjectName("label_2")
-        self.label_3 = QtWidgets.QLabel(Form)
-        self.label_3.setGeometry(QtCore.QRect(80, 10, 81, 21))
-        self.label_3.setObjectName("label_3")
-        self.pushButton_9 = QtWidgets.QPushButton(Form)
-        self.pushButton_9.setGeometry(QtCore.QRect(710, 30, 113, 32))
-        self.pushButton_9.setObjectName("pushButton_9")
+        self.username = QtWidgets.QLabel(Form)
+        self.username.setGeometry(QtCore.QRect(46, 92, 100, 21))
+        self.username.setText("")
+        self.username.setObjectName("username")
+        self.shopcar = QtWidgets.QPushButton(Form)
+        self.shopcar.setGeometry(QtCore.QRect(0, 230, 192, 32))
+        self.shopcar.setStyleSheet("\n"
+"QPushButton#shopcar\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#shopcar:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#shopcar:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.shopcar.setObjectName("shopcar")
         self.layoutWidget = QtWidgets.QWidget(Form)
-        self.layoutWidget.setGeometry(QtCore.QRect(180, 140, 101, 421))
+        self.layoutWidget.setGeometry(QtCore.QRect(250, 160, 131, 421))
         self.layoutWidget.setObjectName("layoutWidget")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.layoutWidget)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
@@ -64,7 +81,7 @@ class Ui_Form(object):
         self.shop_name_4.setObjectName("shop_name_4")
         self.verticalLayout_2.addWidget(self.shop_name_4)
         self.layoutWidget1 = QtWidgets.QWidget(Form)
-        self.layoutWidget1.setGeometry(QtCore.QRect(310, 140, 91, 421))
+        self.layoutWidget1.setGeometry(QtCore.QRect(390, 160, 121, 421))
         self.layoutWidget1.setObjectName("layoutWidget1")
         self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.layoutWidget1)
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
@@ -96,7 +113,7 @@ class Ui_Form(object):
         self.shop_id_5.setObjectName("shop_id_5")
         self.verticalLayout_3.addWidget(self.shop_id_5)
         self.layoutWidget2 = QtWidgets.QWidget(Form)
-        self.layoutWidget2.setGeometry(QtCore.QRect(420, 140, 101, 421))
+        self.layoutWidget2.setGeometry(QtCore.QRect(550, 160, 101, 421))
         self.layoutWidget2.setObjectName("layoutWidget2")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.layoutWidget2)
         self.verticalLayout_4.setContentsMargins(0, 0, 0, 0)
@@ -128,7 +145,7 @@ class Ui_Form(object):
         self.shop_owner_5.setObjectName("shop_owner_5")
         self.verticalLayout_4.addWidget(self.shop_owner_5)
         self.layoutWidget3 = QtWidgets.QWidget(Form)
-        self.layoutWidget3.setGeometry(QtCore.QRect(580, 140, 75, 421))
+        self.layoutWidget3.setGeometry(QtCore.QRect(680, 160, 75, 421))
         self.layoutWidget3.setObjectName("layoutWidget3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget3)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
@@ -264,7 +281,7 @@ class Ui_Form(object):
         self.enter_shop_5.setObjectName("enter_shop_5")
         self.verticalLayout.addWidget(self.enter_shop_5)
         self.layoutWidget4 = QtWidgets.QWidget(Form)
-        self.layoutWidget4.setGeometry(QtCore.QRect(190, 100, 371, 31))
+        self.layoutWidget4.setGeometry(QtCore.QRect(260, 120, 451, 31))
         self.layoutWidget4.setObjectName("layoutWidget4")
         self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget4)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
@@ -281,6 +298,214 @@ class Ui_Form(object):
         self.shop_owner_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.shop_owner_head.setObjectName("shop_owner_head")
         self.horizontalLayout.addWidget(self.shop_owner_head)
+        self.exit = QtWidgets.QPushButton(Form)
+        self.exit.setGeometry(QtCore.QRect(81, 120, 30, 21))
+        self.exit.setStyleSheet("\n"
+"QPushButton#exit\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#exit:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#exit:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.exit.setText("")
+        self.exit.setObjectName("exit")
+        self.label_4 = QtWidgets.QLabel(Form)
+        self.label_4.setGeometry(QtCore.QRect(0, 0, 192, 681))
+        self.label_4.setStyleSheet("background:rgb(242, 242, 243)")
+        self.label_4.setText("")
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
+        self.head = QtWidgets.QLabel(Form)
+        self.head.setGeometry(QtCore.QRect(71, 30, 50, 50))
+        self.head.setText("")
+        self.head.setObjectName("head")
+        self.sline = QtWidgets.QLabel(Form)
+        self.sline.setGeometry(QtCore.QRect(0, 160, 192, 1))
+        self.sline.setText("")
+        self.sline.setObjectName("sline")
+        self.good_sinfo = QtWidgets.QLabel(Form)
+        self.good_sinfo.setGeometry(QtCore.QRect(10, 190, 60, 16))
+        self.good_sinfo.setStyleSheet("background:rgb(242, 242, 243);\n"
+"font: 15pt, \"Heiti SC\" ;\n"
+"color:rgb(102, 104, 104);\n"
+"")
+        self.good_sinfo.setObjectName("good_sinfo")
+        self.bought = QtWidgets.QPushButton(Form)
+        self.bought.setGeometry(QtCore.QRect(0, 290, 192, 32))
+        self.bought.setStyleSheet("\n"
+"QPushButton#bought\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#bought:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#bought:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.bought.setObjectName("bought")
+        self.orders = QtWidgets.QPushButton(Form)
+        self.orders.setGeometry(QtCore.QRect(0, 350, 192, 32))
+        self.orders.setStyleSheet("QPushButton#orders\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#orders:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#orders:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.orders.setObjectName("orders")
+        self.label_5 = QtWidgets.QLabel(Form)
+        self.label_5.setGeometry(QtCore.QRect(15, 450, 60, 16))
+        self.label_5.setStyleSheet("background:rgb(242, 242, 243);\n"
+"font: 15pt, \"Heiti SC\" ;\n"
+"color:rgb(102, 104, 104);\n"
+"")
+        self.label_5.setObjectName("label_5")
+        self.enter_my_shop = QtWidgets.QPushButton(Form)
+        self.enter_my_shop.setGeometry(QtCore.QRect(0, 480, 192, 32))
+        self.enter_my_shop.setStyleSheet("\n"
+"QPushButton#enter_my_shop\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_my_shop:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_my_shop:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.enter_my_shop.setObjectName("enter_my_shop")
+        self.enter_my_shop_2 = QtWidgets.QPushButton(Form)
+        self.enter_my_shop_2.setGeometry(QtCore.QRect(0, 540, 192, 32))
+        self.enter_my_shop_2.setStyleSheet("\n"
+"QPushButton#enter_my_shop_2\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_my_shop_2:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_my_shop_2:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.enter_my_shop_2.setObjectName("enter_my_shop_2")
+        self.label_2 = QtWidgets.QLabel(Form)
+        self.label_2.setGeometry(QtCore.QRect(60, 590, 50, 50))
+        self.label_2.setText("")
+        self.label_2.setObjectName("label_2")
+        self.textEdit = QtWidgets.QTextEdit(Form)
+        self.textEdit.setGeometry(QtCore.QRect(300, 60, 371, 31))
+        self.textEdit.setStyleSheet("background:transparent;border-width:0;border-style:outset;\n"
+"font: 18pt \"Heiti SC\";")
+        self.textEdit.setObjectName("textEdit")
+        self.enter_shop = QtWidgets.QPushButton(Form)
+        self.enter_shop.setGeometry(QtCore.QRect(680, 50, 75, 43))
+        self.enter_shop.setStyleSheet("\n"
+"QPushButton#enter_shop\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.enter_shop.setObjectName("enter_shop")
+        self.label_4.raise_()
+        self.username.raise_()
+        self.shopcar.raise_()
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
+        self.layoutWidget.raise_()
+        self.exit.raise_()
+        self.head.raise_()
+        self.sline.raise_()
+        self.good_sinfo.raise_()
+        self.bought.raise_()
+        self.orders.raise_()
+        self.label_5.raise_()
+        self.enter_my_shop.raise_()
+        self.enter_my_shop_2.raise_()
+        self.label_2.raise_()
+        self.textEdit.raise_()
+        self.enter_shop.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -288,10 +513,7 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.label.setText(_translate("Form", "选个心仪的店铺逛逛吧"))
-        self.label_2.setText(_translate("Form", "user name"))
-        self.label_3.setText(_translate("Form", "欢迎语"))
-        self.pushButton_9.setText(_translate("Form", "谁在逛我的店铺"))
+        self.shopcar.setText(_translate("Form", "购物车"))
         self.enter_shop_1.setText(_translate("Form", "→"))
         self.enter_shop_2.setText(_translate("Form", "→"))
         self.enter_shop_3.setText(_translate("Form", "→"))
@@ -300,4 +522,12 @@ class Ui_Form(object):
         self.shop_name_head.setText(_translate("Form", "店铺名"))
         self.shop_id_head.setText(_translate("Form", "     ID"))
         self.shop_owner_head.setText(_translate("Form", "店  主"))
+        self.good_sinfo.setText(_translate("Form", "购物信息"))
+        self.bought.setText(_translate("Form", "已购买商品"))
+        self.orders.setText(_translate("Form", "所有订单"))
+        self.label_5.setText(_translate("Form", "店铺信息"))
+        self.enter_my_shop.setText(_translate("Form", "我的店铺"))
+        self.enter_my_shop_2.setText(_translate("Form", "谁在逛我的店铺"))
+        self.textEdit.setPlaceholderText(_translate("Form", "输入店铺名或ID进入"))
+        self.enter_shop.setText(_translate("Form", "→"))
 
