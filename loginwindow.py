@@ -1,5 +1,4 @@
 from socket import *
-
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from ui_mainwindow import *
@@ -13,19 +12,19 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(Loginwindow, self).__init__(parent)
         self.setupUi(self)
-        self.loginbutton.clicked.connect(self.send_login_info)
 
+        self.id_text.setAttribute(Qt.WA_MacShowFocusRect, False)
+        self.pw_text.setAttribute(Qt.WA_MacShowFocusRect, False)
+        self.loginbutton.clicked.connect(self.send_login_info)
         icon_see = QIcon("img/see.png")
         self.see_pw.setIcon(icon_see)
         self.see_pw.setIconSize(QSize(20,20))
         self.see_pw.show()
-
         self.see_pw.clicked.connect(self.seepw)
 
     def send_login_info(self):
 
         _translate = QtCore.QCoreApplication.translate
-        loading_img = QPixmap("img/loading.png")
         user_id = self.id_text.text()
         user_pw = self.pw_text.text()
         if user_id == "":

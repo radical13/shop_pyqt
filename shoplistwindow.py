@@ -10,10 +10,9 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.setupUi(self)
         shops = self.getshop()
         self.loadshop(shops)
-
-
-
-
+       # self.exit.clicked.connect(self.exit_request,user)
+        pixmap = QPixmap("img/logo.png")
+        self.logo.setPixmap(pixmap)
     def getshop(self):
         host = '118.89.178.152'
         port = 60002
@@ -21,7 +20,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         if s.connect((host, port)) == 0:
             return
         while True:
-            s.sendall(b"hello")
+            s.sendall(b"get")
             try:
                 data = s.recv(1024)
             except IOError:
@@ -30,6 +29,8 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if data:
                 return shops
                 break
+
+    #modify the shop list
     def modify_shoplist1(self,id,name,owner):
         self.shop_id_1.setText(id)
         self.shop_name_1.setText(name)
@@ -53,9 +54,24 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
 
     def loadshop(self,data):
         #load the first five shops
-        
+
         for i in range(1,6):
             method = "modify_shoplist"+str(i)
             key = list(data.keys())[i-1]
             getattr(self,method)(key,data[key]["name"],data[key]["owner"])
 
+    def exit_request(self,user):
+        host = '118.89.178.152'
+        port = 60003
+        s = socket(AF_INET, SOCK_DGRAM)
+        if s.connect((host, port)) == 0:
+            return
+        while True:
+            s.sendall(user)
+            try:
+                data = s.recv(1024)
+            except IOError:
+                break
+            if data == "exit_success":
+                return True
+                break

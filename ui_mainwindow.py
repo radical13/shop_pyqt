@@ -11,14 +11,14 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(980, 650)
+        MainWindow.resize(400, 500)
         MainWindow.setMaximumSize(QtCore.QSize(980, 16777215))
         MainWindow.setStyleSheet("background-color:white;")
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setStyleSheet("")
         self.centralWidget.setObjectName("centralWidget")
         self.loginbutton = QtWidgets.QPushButton(self.centralWidget)
-        self.loginbutton.setGeometry(QtCore.QRect(710, 370, 51, 41))
+        self.loginbutton.setGeometry(QtCore.QRect(340, 230, 51, 51))
         self.loginbutton.setStyleSheet("\n"
 "QPushButton#loginbutton\n"
 "{\n"
@@ -44,11 +44,11 @@ class Ui_MainWindow(object):
 "")
         self.loginbutton.setObjectName("loginbutton")
         self.logo_title = QtWidgets.QLabel(self.centralWidget)
-        self.logo_title.setGeometry(QtCore.QRect(400, 200, 221, 41))
-        self.logo_title.setStyleSheet("font: 36pt \"Heiti SC\",rgb(30, 30, 30)")
+        self.logo_title.setGeometry(QtCore.QRect(90, 90, 220, 41))
+        self.logo_title.setStyleSheet("font: 75 36pt \"Heiti SC\";")
         self.logo_title.setObjectName("logo_title")
         self.pw_text = QtWidgets.QLineEdit(self.centralWidget)
-        self.pw_text.setGeometry(QtCore.QRect(340, 360, 341, 51))
+        self.pw_text.setGeometry(QtCore.QRect(75, 230, 250, 51))
         self.pw_text.setStyleSheet("background:transparent;border-width:0;border-style:outset;\n"
 "font: 18pt \"Heiti SC\";\n"
 "\n"
@@ -57,10 +57,12 @@ class Ui_MainWindow(object):
         self.pw_text.setEchoMode(QtWidgets.QLineEdit.Password)
         self.pw_text.setObjectName("pw_text")
         self.id_text = QtWidgets.QLineEdit(self.centralWidget)
-        self.id_text.setGeometry(QtCore.QRect(340, 280, 341, 51))
+        self.id_text.setGeometry(QtCore.QRect(75, 160, 250, 51))
         self.id_text.setStyleSheet("background:transparent;border-width:0;border-style:outset;\n"
-"font: 18pt \"Heiti SC\";")
+"font: 18pt \"Heiti SC\";\n"
+"QTreeView::foucus{border:1px solid white;}")
         self.id_text.setMaxLength(16)
+        self.id_text.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
         self.id_text.setObjectName("id_text")
         self.see_pw = QtWidgets.QPushButton(self.centralWidget)
         self.see_pw.setGeometry(QtCore.QRect(630, 360, 51, 51))
@@ -87,9 +89,21 @@ class Ui_MainWindow(object):
         self.see_pw.setText("")
         self.see_pw.setObjectName("see_pw")
         self.net_error = QtWidgets.QLabel(self.centralWidget)
-        self.net_error.setGeometry(QtCore.QRect(360, 450, 350, 150))
+        self.net_error.setGeometry(QtCore.QRect(30, 330, 350, 150))
         self.net_error.setText("")
         self.net_error.setObjectName("net_error")
+        self.sline1 = QtWidgets.QLabel(self.centralWidget)
+        self.sline1.setGeometry(QtCore.QRect(75, 285, 250, 1))
+        self.sline1.setStyleSheet("background:black\n"
+"")
+        self.sline1.setText("")
+        self.sline1.setObjectName("sline1")
+        self.sline2 = QtWidgets.QLabel(self.centralWidget)
+        self.sline2.setGeometry(QtCore.QRect(75, 206, 250, 1))
+        self.sline2.setStyleSheet("background:black\n"
+"")
+        self.sline2.setText("")
+        self.sline2.setObjectName("sline2")
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)

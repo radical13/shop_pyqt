@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>980</width>
-    <height>650</height>
+    <width>400</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="maximumSize">
@@ -29,10 +29,10 @@
    <widget class="QPushButton" name="loginbutton">
     <property name="geometry">
      <rect>
-      <x>710</x>
-      <y>370</y>
+      <x>340</x>
+      <y>230</y>
       <width>51</width>
-      <height>41</height>
+      <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -67,9 +67,9 @@ QPushButton#loginbutton:pressed
    <widget class="QLabel" name="logo_title">
     <property name="geometry">
      <rect>
-      <x>400</x>
-      <y>170</y>
-      <width>221</width>
+      <x>90</x>
+      <y>90</y>
+      <width>220</width>
       <height>41</height>
      </rect>
     </property>
@@ -83,9 +83,9 @@ QPushButton#loginbutton:pressed
    <widget class="QLineEdit" name="pw_text">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>360</y>
-      <width>341</width>
+      <x>75</x>
+      <y>230</y>
+      <width>250</width>
       <height>51</height>
      </rect>
     </property>
@@ -108,21 +108,25 @@ font: 18pt &quot;Heiti SC&quot;;
    <widget class="QLineEdit" name="id_text">
     <property name="geometry">
      <rect>
-      <x>340</x>
-      <y>280</y>
-      <width>341</width>
+      <x>75</x>
+      <y>160</y>
+      <width>250</width>
       <height>51</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background:transparent;border-width:0;border-style:outset;
-font: 18pt &quot;Heiti SC&quot;;</string>
+font: 18pt &quot;Heiti SC&quot;;
+QTreeView::foucus{border:1px solid white;}</string>
     </property>
     <property name="maxLength">
      <number>16</number>
     </property>
     <property name="placeholderText">
      <string>账户名/手机号</string>
+    </property>
+    <property name="cursorMoveStyle">
+     <enum>Qt::LogicalMoveStyle</enum>
     </property>
    </widget>
    <widget class="QPushButton" name="see_pw">
@@ -163,11 +167,45 @@ QPushButton#see_pw:pressed
    <widget class="QLabel" name="net_error">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>450</y>
+      <x>30</x>
+      <y>330</y>
       <width>350</width>
       <height>150</height>
      </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sline1">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>285</y>
+      <width>250</width>
+      <height>1</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:black
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="sline2">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>206</y>
+      <width>250</width>
+      <height>1</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:black
+</string>
     </property>
     <property name="text">
      <string/>
