@@ -64,8 +64,24 @@ class Ui_MainWindow(object):
         self.id_text.setMaxLength(16)
         self.id_text.setCursorMoveStyle(QtCore.Qt.LogicalMoveStyle)
         self.id_text.setObjectName("id_text")
+        self.net_error = QtWidgets.QLabel(self.centralWidget)
+        self.net_error.setGeometry(QtCore.QRect(30, 330, 350, 150))
+        self.net_error.setText("")
+        self.net_error.setObjectName("net_error")
+        self.sline1 = QtWidgets.QLabel(self.centralWidget)
+        self.sline1.setGeometry(QtCore.QRect(75, 285, 250, 1))
+        self.sline1.setStyleSheet("background:black\n"
+"")
+        self.sline1.setText("")
+        self.sline1.setObjectName("sline1")
+        self.sline2 = QtWidgets.QLabel(self.centralWidget)
+        self.sline2.setGeometry(QtCore.QRect(75, 206, 250, 1))
+        self.sline2.setStyleSheet("background:black\n"
+"")
+        self.sline2.setText("")
+        self.sline2.setObjectName("sline2")
         self.see_pw = QtWidgets.QPushButton(self.centralWidget)
-        self.see_pw.setGeometry(QtCore.QRect(630, 360, 51, 51))
+        self.see_pw.setGeometry(QtCore.QRect(270, 230, 51, 51))
         self.see_pw.setStyleSheet("QPushButton#see_pw\n"
 "{\n"
 "    background-color:white;\n"
@@ -88,22 +104,6 @@ class Ui_MainWindow(object):
 "")
         self.see_pw.setText("")
         self.see_pw.setObjectName("see_pw")
-        self.net_error = QtWidgets.QLabel(self.centralWidget)
-        self.net_error.setGeometry(QtCore.QRect(30, 330, 350, 150))
-        self.net_error.setText("")
-        self.net_error.setObjectName("net_error")
-        self.sline1 = QtWidgets.QLabel(self.centralWidget)
-        self.sline1.setGeometry(QtCore.QRect(75, 285, 250, 1))
-        self.sline1.setStyleSheet("background:black\n"
-"")
-        self.sline1.setText("")
-        self.sline1.setObjectName("sline1")
-        self.sline2 = QtWidgets.QLabel(self.centralWidget)
-        self.sline2.setGeometry(QtCore.QRect(75, 206, 250, 1))
-        self.sline2.setStyleSheet("background:black\n"
-"")
-        self.sline2.setText("")
-        self.sline2.setObjectName("sline2")
         MainWindow.setCentralWidget(self.centralWidget)
 
         self.retranslateUi(MainWindow)

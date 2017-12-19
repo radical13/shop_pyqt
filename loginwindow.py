@@ -5,7 +5,6 @@ from ui_mainwindow import *
 from shoplistwindow import ShoplistWindow
 import json
 import hashlib
-import time
 
 
 class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
@@ -37,10 +36,10 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
         pw_m.update(user_pw.encode("utf-8"))
         user_pw_md5 = pw_m.hexdigest()
         host = '118.89.178.152'
-        port = 60000
+        port = 62000
         info_socket = socket(AF_INET, SOCK_DGRAM)
 
-        info = [{"id": user_id, "pw": user_pw_md5}]
+        info = {"method":"login_check","id": user_id, "pw": user_pw_md5}
         message = json.dumps(info)
         if info_socket.connect((host, port)) == 0:
             pixmap = QPixmap("img/neterror.png")
@@ -56,7 +55,7 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 break
 
             if data == b"SUCCESS":
-                self.shoplist_window = ShoplistWindow()
+                self.shoplist_window = ShoplistWindow(user_id)
                 self.close()
                 self.shoplist_window.show()
                 break
@@ -70,6 +69,7 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 pixmap = QPixmap("img/wrong_id.png")
                 self.net_error.setPixmap(pixmap)
                 break
+
         info_socket.close()
 
     def seepw(self):

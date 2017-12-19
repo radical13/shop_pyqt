@@ -129,41 +129,6 @@ QTreeView::foucus{border:1px solid white;}</string>
      <enum>Qt::LogicalMoveStyle</enum>
     </property>
    </widget>
-   <widget class="QPushButton" name="see_pw">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>360</y>
-      <width>51</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QPushButton#see_pw
-{
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#see_pw:hover
-{
-  
-    background-color:white;
-}
-
-QPushButton#see_pw:pressed
-{
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="net_error">
     <property name="geometry">
      <rect>
@@ -205,6 +170,41 @@ QPushButton#see_pw:pressed
     </property>
     <property name="styleSheet">
      <string notr="true">background:black
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="see_pw">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>230</y>
+      <width>51</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#see_pw
+{
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#see_pw:hover
+{
+  
+    background-color:white;
+}
+
+QPushButton#see_pw:pressed
+{
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
 </string>
     </property>
     <property name="text">
