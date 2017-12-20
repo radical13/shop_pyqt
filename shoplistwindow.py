@@ -1,5 +1,5 @@
 from PyQt5.QtGui import QPixmap
-from PyQt5.QtCore import *
+from PyQt5.QtWidgets import QMessageBox
 from ui_shoplist import *
 from socket import *
 import json
@@ -8,31 +8,39 @@ import threading
 # a dic to store the message recived
 def byteify(input):
     if isinstance(input, dict):
-        return {byteify(key): byteify(value) for key, value in input.iteritems()}
+        return {byteify(key): byteify(value) for key, value in input.items()}
     elif isinstance(input, list):
         return [byteify(element) for element in input]
-    elif isinstance(input, unicode):
+    elif isinstance(input, str):
         return input.encode('utf-8')
     else:
         return input
 
 class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
 
-
+    #msg list
     r_msg = []
+
+    #now user information
+    now_user_info ={}
+
     def __init__(self, user,address,parent=None):
         super(ShoplistWindow, self).__init__(parent)
         self.setupUi(self)
         self.setFixedSize(self.width(), self.height())
         self.username.setText(user)
         shops = self.getshop()
+        self.now_user_info = self.get_user_info()
         self.loadshop(shops)
+        self.has_shop()
+
+        self.msg_num.setText(str(len(self.r_msg)))
         pixmap = QPixmap("img/logo.png")
         self.logo.setPixmap(pixmap)
 
         #listen msg
         thread_list=[]
-        print (address)
+        #print (address)
         t = threading.Thread(target=self.listen_msg,args=(address,))
         t.setDaemon(True)
         t.start()
@@ -50,6 +58,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.enter_shop.clicked.connect(lambda:self.enter_shop_request("0"))
         self.back_shoplist.clicked.connect(self.back_list)
         self.enter_my_shop.clicked.connect(self.enter_own_shop_request)
+        self.shop_custom.clicked.connect(self.get_custom)
     def getshop(self):
         host = '118.89.178.152'
         port = 62000
@@ -68,7 +77,24 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if data:
                 return shops
                 break
-
+    def get_user_info(self):
+        host = '118.89.178.152'
+        port = 62000
+        s = socket(AF_INET, SOCK_DGRAM)
+        if s.connect((host, port)) == 0:
+            return
+        while True:
+            info = {"method": "load_info","user":self.username.text()}
+            message = json.dumps(info)
+            s.sendall(message.encode(encoding='utf-8'))
+            try:
+                data = s.recv(1024)
+            except IOError:
+                break
+            user_info = json.loads(data)
+            if data:
+                user_info["shop"] = str(user_info['shop'])
+                return user_info
     #modify the shop list
     def modify_shoplist1(self,id,name,owner):
         self.shop_id_1.setText(id)
@@ -270,6 +296,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
                     self.now_shop.setText(str(shop_id))
                     #self.now_shop_name.setText()
                     self.load_goods(goods["goods"],goods["name"])
+                    self.shop_custom.setHidden(False)
                     return goods["goods"]
                     break
                 elif goods["state"] == "close":
@@ -300,13 +327,17 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
                 if goods["state"] == "open":
                     self.now_shop.setText(goods["id"])
                     self.load_goods(goods["goods"],goods['name'])
+                    self.shop_custom.setHidden(False)
                     return goods["goods"]
-                    break
                 elif goods["state"] == "close":
                     # shop has closed
+                    msg_window = MsgWindow("进入店铺失败","你的店铺..好像已经被关了")
+                    msg_window.show()
                     break
                 elif goods["state"] == "null":
                     # no this shop
+                    msg_window = MsgWindow("进入店铺失败", "你明明没有店！")
+                    msg_window.show()
                     break
             else:
                 continue
@@ -330,10 +361,16 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if data == b"0":
                 shop = self.getshop()
                 self.loadshop(shop)
+                self.has_shop()
                 break
             else:
                 print(data)
                 break
+    def has_shop(self):
+        if self.now_user_info["shop"] != 0:
+            self.shop_custom.setHidden(False)
+        else:
+            self.shop_custom.setHidden(True)
 
     #recv message function
     def listen_msg(self,address):
@@ -344,7 +381,48 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if not data:
                 break
             data = json.loads(data)
-            print (data)
-            #data = byteify(data)
+
             self.r_msg.append(data)
+
             #some tips to tell the user
+            self.msg_num.setText(str(len(self.r_msg)))
+    def get_custom(self):
+
+        host = '118.89.178.152'
+        port = 62000
+        s = socket(AF_INET, SOCK_DGRAM)
+        info = {"method": "show_custom", "id": ""}
+        if self.shop_name_head.text()=="商品名":
+            info['id'] = self.now_shop.text()
+        else:
+            info['id'] = self.now_user_info['shop']
+        message = json.dumps(info)
+        if s.connect((host, port)) == 0:
+            return
+        while True:
+            s.sendall(message.encode(encoding='utf-8'))
+            try:
+                data = s.recv(1024)
+            except IOError:
+                break
+            data = json.loads(data)
+
+            data = data[info['id']]
+            if len(data) != 0:
+                self.custom.setHidden(False)
+                self.custom_head.setHidden(False)
+                str=""
+                for i in range(len(data)):
+                    str =str + data[i] +"\n"
+                self.custom.setText(str)
+            else:
+                self.custom.setHidden(True)
+                self.custom_head.setHidden(True)
+            break
+
+class MsgWindow(QtWidgets.QWidget):
+    def __init__(self,m1,m2):
+        super().__init__()
+        QMessageBox.information(self, m1, m2, QMessageBox.Yes)
+
+

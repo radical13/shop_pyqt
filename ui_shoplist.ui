@@ -20,7 +20,7 @@
   <widget class="QLabel" name="username">
    <property name="geometry">
     <rect>
-     <x>710</x>
+     <x>620</x>
      <y>20</y>
      <width>100</width>
      <height>21</height>
@@ -410,7 +410,7 @@ QPushButton#enter_shop_5:pressed
   <widget class="QPushButton" name="exit">
    <property name="geometry">
     <rect>
-     <x>820</x>
+     <x>740</x>
      <y>20</y>
      <width>30</width>
      <height>21</height>
@@ -625,7 +625,7 @@ QPushButton#enter_my_shop:pressed
     <string>我的店铺</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="enter_my_shop_2">
+  <widget class="QPushButton" name="shop_custom">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -1017,9 +1017,9 @@ QPushButton#last_page:pressed
   <widget class="QPushButton" name="enter_shop_6">
    <property name="geometry">
     <rect>
-     <x>860</x>
+     <x>800</x>
      <y>20</y>
-     <width>51</width>
+     <width>41</width>
      <height>21</height>
     </rect>
    </property>
@@ -1150,6 +1150,52 @@ QPushButton#back_shoplist:pressed
     <string>←</string>
    </property>
   </widget>
+  <widget class="QLabel" name="msg_num">
+   <property name="geometry">
+    <rect>
+     <x>840</x>
+     <y>20</y>
+     <width>71</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent;
+color:white</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="custom">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>160</y>
+     <width>120</width>
+     <height>411</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="custom_head">
+   <property name="geometry">
+    <rect>
+     <x>800</x>
+     <y>120</y>
+     <width>120</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>谁在我的店？？</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
   <widget class="QLabel" name="shop_name_head">
    <property name="geometry">
     <rect>
@@ -1222,7 +1268,7 @@ QPushButton#back_shoplist:pressed
   <zorder>orders</zorder>
   <zorder>label_5</zorder>
   <zorder>enter_my_shop</zorder>
-  <zorder>enter_my_shop_2</zorder>
+  <zorder>shop_custom</zorder>
   <zorder>enter_shop</zorder>
   <zorder>sline_2</zorder>
   <zorder>logo</zorder>
@@ -1242,6 +1288,9 @@ QPushButton#back_shoplist:pressed
   <zorder>now_shop_head</zorder>
   <zorder>now_shop_name</zorder>
   <zorder>back_shoplist</zorder>
+  <zorder>msg_num</zorder>
+  <zorder>custom</zorder>
+  <zorder>custom_head</zorder>
  </widget>
  <resources/>
  <connections/>

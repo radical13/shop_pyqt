@@ -158,7 +158,8 @@ def enter_own_shop(s,data,address):
         else:
             return "1"
     else:
-        msg="1"
+        msg = {"state": "null", "goods": []}
+        msg = json.dumps(msg)
         if s.sendto(msg, address) != 0:
             return "0"
         else:
@@ -184,7 +185,36 @@ def show_custom(s,data,address):
         else:
             # SEND FAIL
             return "2"
-
+def has_shop(s,data,address):
+    if user_infomation[data['user']]['shop']!=0:
+        if s.sendto("0", address) != 0:
+            return "0"
+        else:
+            # SEND FAIL
+            return "2"
+    else:
+        if s.sendto("1", address) != 0:
+            return "1"
+        else:
+            # SEND FAIL
+            return "2"
+def load_info(s,data,address):
+    if user_infomation.__contains__(data['user']):
+        msg = user_infomation[data["user"]]
+        msg = json.dumps(msg)
+        if s.sendto(msg, address) != 0:
+            return "0"
+        else:
+            # SEND FAIL
+            return "2"
+    else:
+        msg={}
+        msg = json.dumps(msg)
+        if s.sendto(msg, address) != 0:
+            return "1"
+        else:
+            # SEND FAIL
+            return "2"
 def byteify(input):
         if isinstance(input, dict):
             return {byteify(key): byteify(value) for key, value in input.iteritems()}
@@ -361,13 +391,15 @@ shop_visit={}
 
 #the request function dict
 request_function={
+    "load_info":load_info,
     "login_check":login_check,
     "send_shoplist":send_shoplist,
     "exit_request":exit_request,
     "enter_shop":enter_shop,
     "leave_shop":leave_shop,
     "enter_own_shop":enter_own_shop,
-    "show_custom":show_custom
+    "show_custom":show_custom,
+    "has_shop":has_shop
 }
 
 

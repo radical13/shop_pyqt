@@ -15,7 +15,7 @@ class Ui_Form(object):
         Form.setStyleSheet("background:white;\n"
 "")
         self.username = QtWidgets.QLabel(Form)
-        self.username.setGeometry(QtCore.QRect(710, 20, 100, 21))
+        self.username.setGeometry(QtCore.QRect(620, 20, 100, 21))
         self.username.setStyleSheet("background:transparent;")
         self.username.setText("")
         self.username.setObjectName("username")
@@ -257,7 +257,7 @@ class Ui_Form(object):
         self.enter_shop_5.setObjectName("enter_shop_5")
         self.verticalLayout.addWidget(self.enter_shop_5)
         self.exit = QtWidgets.QPushButton(Form)
-        self.exit.setGeometry(QtCore.QRect(820, 20, 30, 21))
+        self.exit.setGeometry(QtCore.QRect(740, 20, 30, 21))
         self.exit.setStyleSheet("\n"
 "QPushButton#exit\n"
 "{\n"
@@ -380,9 +380,9 @@ class Ui_Form(object):
 "}\n"
 "")
         self.enter_my_shop.setObjectName("enter_my_shop")
-        self.enter_my_shop_2 = QtWidgets.QPushButton(Form)
-        self.enter_my_shop_2.setGeometry(QtCore.QRect(0, 440, 192, 32))
-        self.enter_my_shop_2.setStyleSheet("\n"
+        self.shop_custom = QtWidgets.QPushButton(Form)
+        self.shop_custom.setGeometry(QtCore.QRect(0, 440, 192, 32))
+        self.shop_custom.setStyleSheet("\n"
 "QPushButton#enter_my_shop_2\n"
 "{\n"
 "    font:12pt,black;\n"
@@ -404,7 +404,7 @@ class Ui_Form(object):
 "    padding-top:3px;\n"
 "}\n"
 "")
-        self.enter_my_shop_2.setObjectName("enter_my_shop_2")
+        self.shop_custom.setObjectName("shop_custom")
         self.enter_shop = QtWidgets.QPushButton(Form)
         self.enter_shop.setGeometry(QtCore.QRect(480, 15, 51, 31))
         self.enter_shop.setStyleSheet("\n"
@@ -583,7 +583,7 @@ class Ui_Form(object):
         self.page_5.setAlignment(QtCore.Qt.AlignCenter)
         self.page_5.setObjectName("page_5")
         self.enter_shop_6 = QtWidgets.QPushButton(Form)
-        self.enter_shop_6.setGeometry(QtCore.QRect(860, 20, 51, 21))
+        self.enter_shop_6.setGeometry(QtCore.QRect(800, 20, 41, 21))
         self.enter_shop_6.setStyleSheet("\n"
 "QPushButton#enter_shop\n"
 "{\n"
@@ -650,6 +650,20 @@ class Ui_Form(object):
 "\n"
 "")
         self.back_shoplist.setObjectName("back_shoplist")
+        self.msg_num = QtWidgets.QLabel(Form)
+        self.msg_num.setGeometry(QtCore.QRect(840, 20, 71, 21))
+        self.msg_num.setStyleSheet("background:transparent;\n"
+"color:white")
+        self.msg_num.setText("")
+        self.msg_num.setObjectName("msg_num")
+        self.custom = QtWidgets.QLabel(Form)
+        self.custom.setGeometry(QtCore.QRect(800, 160, 120, 411))
+        self.custom.setText("")
+        self.custom.setObjectName("custom")
+        self.custom_head = QtWidgets.QLabel(Form)
+        self.custom_head.setGeometry(QtCore.QRect(800, 120, 120, 16))
+        self.custom_head.setAlignment(QtCore.Qt.AlignCenter)
+        self.custom_head.setObjectName("custom_head")
         self.shop_name_head = QtWidgets.QLabel(Form)
         self.shop_name_head.setGeometry(QtCore.QRect(250, 120, 129, 20))
         self.shop_name_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
@@ -680,7 +694,7 @@ class Ui_Form(object):
         self.orders.raise_()
         self.label_5.raise_()
         self.enter_my_shop.raise_()
-        self.enter_my_shop_2.raise_()
+        self.shop_custom.raise_()
         self.enter_shop.raise_()
         self.sline_2.raise_()
         self.logo.raise_()
@@ -700,6 +714,9 @@ class Ui_Form(object):
         self.now_shop_head.raise_()
         self.now_shop_name.raise_()
         self.back_shoplist.raise_()
+        self.msg_num.raise_()
+        self.custom.raise_()
+        self.custom_head.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -718,7 +735,7 @@ class Ui_Form(object):
         self.orders.setText(_translate("Form", "所有订单"))
         self.label_5.setText(_translate("Form", "店铺信息"))
         self.enter_my_shop.setText(_translate("Form", "我的店铺"))
-        self.enter_my_shop_2.setText(_translate("Form", "谁在逛我的店铺"))
+        self.shop_custom.setText(_translate("Form", "谁在逛我的店铺"))
         self.enter_shop.setText(_translate("Form", "→"))
         self.label_7.setText(_translate("Form", "用户信息"))
         self.login_info.setText(_translate("Form", "登录记录"))
@@ -732,6 +749,7 @@ class Ui_Form(object):
         self.input_shop_id.setPlaceholderText(_translate("Form", "输入店铺ID进入"))
         self.now_shop_head.setText(_translate("Form", "您当前在"))
         self.back_shoplist.setText(_translate("Form", "←"))
+        self.custom_head.setText(_translate("Form", "谁在我的店？？"))
         self.shop_name_head.setText(_translate("Form", "店铺名"))
         self.shop_id_head.setText(_translate("Form", "ID"))
         self.shop_owner_head.setText(_translate("Form", "店  主"))

@@ -58,7 +58,6 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 address = info_socket.getsockname()
                 info_socket.close()
                 self.shoplist_window = ShoplistWindow(user_id,address)
-
                 self.close()
                 self.shoplist_window.show()
 
