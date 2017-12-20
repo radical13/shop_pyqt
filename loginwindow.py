@@ -55,9 +55,13 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
                 break
 
             if data == b"SUCCESS":
-                self.shoplist_window = ShoplistWindow(user_id)
+                address = info_socket.getsockname()
+                info_socket.close()
+                self.shoplist_window = ShoplistWindow(user_id,address)
+
                 self.close()
                 self.shoplist_window.show()
+
                 break
 
             if data == b"FAIL":

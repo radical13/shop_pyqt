@@ -26,7 +26,7 @@ def login_check(s,data, address):
     user_pw = data["pw"]
 
     if user_infomation.get(user_id, "NULL") == "NULL":
-        if s.sendall('NO_USER', address)!=0:
+        if s.sendto('NO_USER', address)!=0:
             return "1"
         else:
             #SEND FAIL
@@ -80,13 +80,15 @@ def enter_shop(s,data,address):
         if shop_list[data["id"]]["state"] == "open":
             msg={"state":"open","goods":[]}
             msg["goods"] = shop_list[data["id"]]["goods"]
+            msg["id"] = data["id"]
+            msg["name"] = shop_list[data["id"]]['name']
             msg = json.dumps(msg)
             if s.sendto(msg, address) != 0:
                 #store online visitor
                 if shop_visit.__contains__(data["id"]):
-                    if data["user"] not in data["id"]:
+                    if data["user"] not in shop_visit[data["id"]] and data['user'] != shop_list[data['id']]['owner']:
                         shop_visit[data["id"]].append(data["user"])
-                else:
+                elif data['user'] != shop_list[data['id']]['owner']:#the owner not in the visit list
                     shop_visit[data["id"]] = []
                     shop_visit[data["id"]].append(data["user"])
 
@@ -114,15 +116,31 @@ def enter_shop(s,data,address):
 
 
 def leave_shop(s,data,address):
-    if shop_visit.__contains__(data["id"]):
-        if data["user"] in shop_visit[data["id"]]:
-            shop_visit[data["id"]].remove(data["user"])
-            msg="0"
-            if s.sendto(msg, address) != 0:
-                return "0"
+    if data["user"] == shop_list[data["id"]]["owner"]:
+        msg = "0"
+        if s.sendto(msg, address) != 0:
+            return "0"
+        else:
+            # SEND FAIL
+            return "2"
+    else:
+        if shop_visit.__contains__(data["id"]):
+            if data["user"] in shop_visit[data["id"]]:
+                if data["user"] in shop_visit[data["id"]]:
+                    shop_visit[data["id"]].remove(data["user"])
+                msg="0"
+                if s.sendto(msg, address) != 0:
+                    return "0"
+                else:
+                    # SEND FAIL
+                    return "2"
             else:
-                # SEND FAIL
-                return "2"
+                msg = "1"
+                if s.sendto(msg, address) != 0:
+                    return "0"
+                else:
+                    # SEND FAIL
+                    return "2"
         else:
             msg = "1"
             if s.sendto(msg, address) != 0:
@@ -130,19 +148,15 @@ def leave_shop(s,data,address):
             else:
                 # SEND FAIL
                 return "2"
-    else:
-        msg = "1"
-        if s.sendto(msg, address) != 0:
-            return "0"
-        else:
-            # SEND FAIL
-            return "2"
 
 def enter_own_shop(s,data,address):
     user = data["user"]
     if user_infomation[user]["shop"] != 0:
-        data["shop"] = user_infomation[user]["shop"]
-        enter_shop(s,data,address)
+        data["id"] = str(user_infomation[user]["shop"])
+        if enter_shop(s,data,address) == "0":
+            return "0"
+        else:
+            return "1"
     else:
         msg="1"
         if s.sendto(msg, address) != 0:
@@ -154,13 +168,22 @@ def enter_own_shop(s,data,address):
 def show_custom(s,data,address):
     id = data["id"]
     msg={}
-    msg[id] = shop_visit[id]
-    msg = json.dumps(msg)
-    if s.sendto(msg, address) != 0:
-        return "0"
+    if shop_visit.__contains__(id):
+        msg[id] = shop_visit[id]
+        msg = json.dumps(msg)
+        if s.sendto(msg, address) != 0:
+            return "0"
+        else:
+            # SEND FAIL
+            return "2"
     else:
-        # SEND FAIL
-        return "2"
+        msg[id] = []
+        msg = json.dumps(msg)
+        if s.sendto(msg, address) != 0:
+            return "0"
+        else:
+            # SEND FAIL
+            return "2"
 
 def byteify(input):
         if isinstance(input, dict):

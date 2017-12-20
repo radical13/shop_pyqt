@@ -614,18 +614,18 @@ class Ui_Form(object):
         self.input_shop_id.setAlignment(QtCore.Qt.AlignCenter)
         self.input_shop_id.setObjectName("input_shop_id")
         self.now_shop = QtWidgets.QLabel(Form)
-        self.now_shop.setGeometry(QtCore.QRect(280, 70, 151, 31))
+        self.now_shop.setGeometry(QtCore.QRect(280, 70, 101, 31))
         self.now_shop.setText("")
         self.now_shop.setObjectName("now_shop")
         self.now_shop_head = QtWidgets.QLabel(Form)
         self.now_shop_head.setGeometry(QtCore.QRect(220, 80, 61, 21))
         self.now_shop_head.setObjectName("now_shop_head")
         self.now_shop_name = QtWidgets.QLabel(Form)
-        self.now_shop_name.setGeometry(QtCore.QRect(440, 70, 151, 31))
+        self.now_shop_name.setGeometry(QtCore.QRect(400, 70, 151, 31))
         self.now_shop_name.setText("")
         self.now_shop_name.setObjectName("now_shop_name")
         self.back_shoplist = QtWidgets.QPushButton(Form)
-        self.back_shoplist.setGeometry(QtCore.QRect(450, 70, 61, 31))
+        self.back_shoplist.setGeometry(QtCore.QRect(570, 70, 61, 31))
         self.back_shoplist.setStyleSheet("\n"
 "QPushButton#back_shoplist\n"
 "{\n"
