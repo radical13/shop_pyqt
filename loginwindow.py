@@ -35,7 +35,7 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
         pw_m = hashlib.md5()
         pw_m.update(user_pw.encode("utf-8"))
         user_pw_md5 = pw_m.hexdigest()
-        host = '118.89.178.152'
+        host = '127.0.0.1'
         port = 62000
         info_socket = socket(AF_INET, SOCK_DGRAM)
 

@@ -120,142 +120,6 @@ class Ui_Form(object):
         self.shop_owner_5.setAlignment(QtCore.Qt.AlignCenter)
         self.shop_owner_5.setObjectName("shop_owner_5")
         self.verticalLayout_4.addWidget(self.shop_owner_5)
-        self.layoutWidget3 = QtWidgets.QWidget(Form)
-        self.layoutWidget3.setGeometry(QtCore.QRect(680, 150, 75, 431))
-        self.layoutWidget3.setObjectName("layoutWidget3")
-        self.verticalLayout = QtWidgets.QVBoxLayout(self.layoutWidget3)
-        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.enter_shop_1 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.enter_shop_1.setStyleSheet("\n"
-"QPushButton#enter_shop_1\n"
-"{\n"
-"    font:36pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_1:hover\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_1:pressed\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"\n"
-"")
-        self.enter_shop_1.setObjectName("enter_shop_1")
-        self.verticalLayout.addWidget(self.enter_shop_1)
-        self.enter_shop_2 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.enter_shop_2.setStyleSheet("\n"
-"QPushButton#enter_shop_2\n"
-"{\n"
-"    font:36pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_2:hover\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_2:pressed\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"\n"
-"")
-        self.enter_shop_2.setObjectName("enter_shop_2")
-        self.verticalLayout.addWidget(self.enter_shop_2)
-        self.enter_shop_3 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.enter_shop_3.setStyleSheet("\n"
-"QPushButton#enter_shop_3\n"
-"{\n"
-"    font:36pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_3:hover\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_3:pressed\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"\n"
-"")
-        self.enter_shop_3.setObjectName("enter_shop_3")
-        self.verticalLayout.addWidget(self.enter_shop_3)
-        self.enter_shop_4 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.enter_shop_4.setStyleSheet("\n"
-"QPushButton#enter_shop_4\n"
-"{\n"
-"    font:36pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_4:hover\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_4:pressed\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"\n"
-"")
-        self.enter_shop_4.setObjectName("enter_shop_4")
-        self.verticalLayout.addWidget(self.enter_shop_4)
-        self.enter_shop_5 = QtWidgets.QPushButton(self.layoutWidget3)
-        self.enter_shop_5.setStyleSheet("\n"
-"QPushButton#enter_shop_5\n"
-"{\n"
-"    font:36pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_5:hover\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_shop_5:pressed\n"
-"{\n"
-"   font:36pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"\n"
-"")
-        self.enter_shop_5.setObjectName("enter_shop_5")
-        self.verticalLayout.addWidget(self.enter_shop_5)
         self.exit = QtWidgets.QPushButton(Form)
         self.exit.setGeometry(QtCore.QRect(740, 20, 30, 21))
         self.exit.setStyleSheet("\n"
@@ -582,9 +446,9 @@ class Ui_Form(object):
         self.page_5.setStyleSheet("font: 75 16pt \"Heiti SC\";")
         self.page_5.setAlignment(QtCore.Qt.AlignCenter)
         self.page_5.setObjectName("page_5")
-        self.enter_shop_6 = QtWidgets.QPushButton(Form)
-        self.enter_shop_6.setGeometry(QtCore.QRect(800, 20, 41, 21))
-        self.enter_shop_6.setStyleSheet("\n"
+        self.see_msg = QtWidgets.QPushButton(Form)
+        self.see_msg.setGeometry(QtCore.QRect(800, 20, 41, 21))
+        self.see_msg.setStyleSheet("\n"
 "QPushButton#enter_shop\n"
 "{\n"
 "    font:36pt,black;\n"
@@ -606,7 +470,7 @@ class Ui_Form(object):
 "    padding-top:3px;\n"
 "}\n"
 "")
-        self.enter_shop_6.setObjectName("enter_shop_6")
+        self.see_msg.setObjectName("see_msg")
         self.input_shop_id = QtWidgets.QLineEdit(Form)
         self.input_shop_id.setGeometry(QtCore.QRect(250, 15, 221, 31))
         self.input_shop_id.setText("")
@@ -657,13 +521,54 @@ class Ui_Form(object):
         self.msg_num.setText("")
         self.msg_num.setObjectName("msg_num")
         self.custom = QtWidgets.QLabel(Form)
-        self.custom.setGeometry(QtCore.QRect(800, 160, 120, 411))
+        self.custom.setGeometry(QtCore.QRect(840, 560, 120, 101))
         self.custom.setText("")
         self.custom.setObjectName("custom")
         self.custom_head = QtWidgets.QLabel(Form)
-        self.custom_head.setGeometry(QtCore.QRect(800, 120, 120, 16))
+        self.custom_head.setGeometry(QtCore.QRect(840, 590, 120, 16))
         self.custom_head.setAlignment(QtCore.Qt.AlignCenter)
         self.custom_head.setObjectName("custom_head")
+        self.num_1 = QtWidgets.QLineEdit(Form)
+        self.num_1.setGeometry(QtCore.QRect(730, 190, 90, 23))
+        self.num_1.setStyleSheet("font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;")
+        self.num_1.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_1.setObjectName("num_1")
+        self.num_2 = QtWidgets.QLineEdit(Form)
+        self.num_2.setGeometry(QtCore.QRect(730, 270, 90, 23))
+        self.num_2.setStyleSheet("font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;")
+        self.num_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_2.setObjectName("num_2")
+        self.num_3 = QtWidgets.QLineEdit(Form)
+        self.num_3.setGeometry(QtCore.QRect(730, 360, 90, 23))
+        self.num_3.setStyleSheet("font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;")
+        self.num_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_3.setObjectName("num_3")
+        self.num_4 = QtWidgets.QLineEdit(Form)
+        self.num_4.setGeometry(QtCore.QRect(730, 440, 90, 23))
+        self.num_4.setStyleSheet("font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;")
+        self.num_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_4.setObjectName("num_4")
+        self.num_5 = QtWidgets.QLineEdit(Form)
+        self.num_5.setGeometry(QtCore.QRect(730, 520, 90, 23))
+        self.num_5.setStyleSheet("font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;")
+        self.num_5.setMaxLength(3)
+        self.num_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_5.setObjectName("num_5")
+        self.num_head = QtWidgets.QLabel(Form)
+        self.num_head.setGeometry(QtCore.QRect(720, 120, 91, 20))
+        self.num_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
+        self.num_head.setAlignment(QtCore.Qt.AlignCenter)
+        self.num_head.setObjectName("num_head")
         self.shop_name_head = QtWidgets.QLabel(Form)
         self.shop_name_head.setGeometry(QtCore.QRect(250, 120, 129, 20))
         self.shop_name_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
@@ -679,6 +584,266 @@ class Ui_Form(object):
         self.shop_owner_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.shop_owner_head.setAlignment(QtCore.Qt.AlignCenter)
         self.shop_owner_head.setObjectName("shop_owner_head")
+        self.buy_good_1 = QtWidgets.QPushButton(Form)
+        self.buy_good_1.setGeometry(QtCore.QRect(851, 190, 36, 26))
+        self.buy_good_1.setStyleSheet("\n"
+"QPushButton#buy_good_1\n"
+"{\n"
+"    font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_1:hover\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_1:pressed\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.buy_good_1.setObjectName("buy_good_1")
+        self.buy_good_3 = QtWidgets.QPushButton(Form)
+        self.buy_good_3.setGeometry(QtCore.QRect(851, 360, 36, 26))
+        self.buy_good_3.setStyleSheet("\n"
+"QPushButton#buy_good_3\n"
+"{\n"
+"    font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_3:hover\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_3:pressed\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.buy_good_3.setObjectName("buy_good_3")
+        self.buy_good_4 = QtWidgets.QPushButton(Form)
+        self.buy_good_4.setGeometry(QtCore.QRect(851, 440, 36, 26))
+        self.buy_good_4.setStyleSheet("\n"
+"QPushButton#buy_good_4\n"
+"{\n"
+"    font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_4:hover\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_4:pressed\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.buy_good_4.setObjectName("buy_good_4")
+        self.buy_good_2 = QtWidgets.QPushButton(Form)
+        self.buy_good_2.setGeometry(QtCore.QRect(851, 270, 36, 26))
+        self.buy_good_2.setStyleSheet("\n"
+"QPushButton#buy_good_2\n"
+"{\n"
+"    font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_2:hover\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_2:pressed\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.buy_good_2.setObjectName("buy_good_2")
+        self.buy_good_5 = QtWidgets.QPushButton(Form)
+        self.buy_good_5.setGeometry(QtCore.QRect(851, 520, 36, 26))
+        self.buy_good_5.setStyleSheet("\n"
+"QPushButton#buy_good_5\n"
+"{\n"
+"    font:18pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_5:hover\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#buy_good_5:pressed\n"
+"{\n"
+"   font:18pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.buy_good_5.setObjectName("buy_good_5")
+        self.enter_shop_2 = QtWidgets.QPushButton(Form)
+        self.enter_shop_2.setGeometry(QtCore.QRect(680, 260, 30, 43))
+        self.enter_shop_2.setStyleSheet("\n"
+"QPushButton#enter_shop_2\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_2:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_2:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.enter_shop_2.setObjectName("enter_shop_2")
+        self.enter_shop_1 = QtWidgets.QPushButton(Form)
+        self.enter_shop_1.setGeometry(QtCore.QRect(680, 180, 30, 43))
+        self.enter_shop_1.setStyleSheet("\n"
+"QPushButton#enter_shop_1\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_1:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_1:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.enter_shop_1.setObjectName("enter_shop_1")
+        self.enter_shop_5 = QtWidgets.QPushButton(Form)
+        self.enter_shop_5.setGeometry(QtCore.QRect(680, 510, 30, 43))
+        self.enter_shop_5.setStyleSheet("\n"
+"QPushButton#enter_shop_5\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_5:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_5:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.enter_shop_5.setObjectName("enter_shop_5")
+        self.enter_shop_3 = QtWidgets.QPushButton(Form)
+        self.enter_shop_3.setGeometry(QtCore.QRect(680, 350, 30, 43))
+        self.enter_shop_3.setStyleSheet("\n"
+"QPushButton#enter_shop_3\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_3:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_3:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.enter_shop_3.setObjectName("enter_shop_3")
+        self.enter_shop_4 = QtWidgets.QPushButton(Form)
+        self.enter_shop_4.setGeometry(QtCore.QRect(680, 430, 30, 43))
+        self.enter_shop_4.setStyleSheet("\n"
+"QPushButton#enter_shop_4\n"
+"{\n"
+"    font:36pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_4:hover\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_shop_4:pressed\n"
+"{\n"
+"   font:36pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"\n"
+"")
+        self.enter_shop_4.setObjectName("enter_shop_4")
         self.label_4.raise_()
         self.label_6.raise_()
         self.username.raise_()
@@ -708,7 +873,7 @@ class Ui_Form(object):
         self.shop_num.raise_()
         self.page.raise_()
         self.page_5.raise_()
-        self.enter_shop_6.raise_()
+        self.see_msg.raise_()
         self.input_shop_id.raise_()
         self.now_shop.raise_()
         self.now_shop_head.raise_()
@@ -717,6 +882,12 @@ class Ui_Form(object):
         self.msg_num.raise_()
         self.custom.raise_()
         self.custom_head.raise_()
+        self.num_1.raise_()
+        self.num_2.raise_()
+        self.num_3.raise_()
+        self.num_4.raise_()
+        self.num_5.raise_()
+        self.num_head.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -724,11 +895,6 @@ class Ui_Form(object):
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
-        self.enter_shop_1.setText(_translate("Form", "→"))
-        self.enter_shop_2.setText(_translate("Form", "→"))
-        self.enter_shop_3.setText(_translate("Form", "→"))
-        self.enter_shop_4.setText(_translate("Form", "→"))
-        self.enter_shop_5.setText(_translate("Form", "→"))
         self.exit.setText(_translate("Form", "退出"))
         self.good_sinfo.setText(_translate("Form", "购物信息"))
         self.bought.setText(_translate("Form", "已购买商品"))
@@ -745,12 +911,28 @@ class Ui_Form(object):
         self.page3.setText(_translate("Form", "共"))
         self.page_2.setText(_translate("Form", "家店铺 当前是第"))
         self.page_5.setText(_translate("Form", "页"))
-        self.enter_shop_6.setText(_translate("Form", "私信"))
+        self.see_msg.setText(_translate("Form", "私信"))
         self.input_shop_id.setPlaceholderText(_translate("Form", "输入店铺ID进入"))
         self.now_shop_head.setText(_translate("Form", "您当前在"))
         self.back_shoplist.setText(_translate("Form", "←"))
         self.custom_head.setText(_translate("Form", "谁在我的店？？"))
+        self.num_1.setPlaceholderText(_translate("Form", "×1"))
+        self.num_2.setPlaceholderText(_translate("Form", "×1"))
+        self.num_3.setPlaceholderText(_translate("Form", "×1"))
+        self.num_4.setPlaceholderText(_translate("Form", "×1"))
+        self.num_5.setPlaceholderText(_translate("Form", "×1"))
+        self.num_head.setText(_translate("Form", "件数"))
         self.shop_name_head.setText(_translate("Form", "店铺名"))
         self.shop_id_head.setText(_translate("Form", "ID"))
         self.shop_owner_head.setText(_translate("Form", "店  主"))
+        self.buy_good_1.setText(_translate("Form", "剁手"))
+        self.buy_good_3.setText(_translate("Form", "剁手"))
+        self.buy_good_4.setText(_translate("Form", "剁手"))
+        self.buy_good_2.setText(_translate("Form", "剁手"))
+        self.buy_good_5.setText(_translate("Form", "剁手"))
+        self.enter_shop_2.setText(_translate("Form", "→"))
+        self.enter_shop_1.setText(_translate("Form", "→"))
+        self.enter_shop_5.setText(_translate("Form", "→"))
+        self.enter_shop_3.setText(_translate("Form", "→"))
+        self.enter_shop_4.setText(_translate("Form", "→"))
 

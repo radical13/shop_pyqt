@@ -4,6 +4,10 @@ from socket import *
 import json
 import hashlib
 import datetime
+import time
+import random
+
+#These are listen request function#
 
 def send_shoplist(s,data,address):
 
@@ -14,19 +18,18 @@ def send_shoplist(s,data,address):
             msg[key]["name"] = shop_list[key]["name"]
             msg[key]["owner"] = shop_list[key]["owner"]
     msg = json.dumps(msg)
-    if s.sendto(msg, address) != 0:
+    if s.sendto(str.encode(msg), address) != 0:
         return "0"
     else:
         # SEND FAIL
         return "2"
-
 def login_check(s,data, address):
 
     user_id = data["id"]
     user_pw = data["pw"]
 
     if user_infomation.get(user_id, "NULL") == "NULL":
-        if s.sendto('NO_USER', address)!=0:
+        if s.sendto(b'NO_USER', address)!=0:
             return "1"
         else:
             #SEND FAIL
@@ -38,15 +41,15 @@ def login_check(s,data, address):
     user_pw_md5 = pw_m.hexdigest()
 
     if user_pw_md5 == user_pw:
-        if s.sendto('SUCCESS', address) != 0:
+        if s.sendto(b'SUCCESS', address) != 0:
             # update login info，record the login log
             if login_info.__contains__(user_id):
-                login_info[user_id]["state"] = "true"
+                login_info[user_id]["state"] = True
                 info = {"time": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "add": address}
                 login_info[user_id]["history"].append(info)
             else:
                 login_info[user_id] = {"state": "", "history": []}
-                login_info[user_id]["state"] = "true"
+                login_info[user_id]["state"] = True
                 info = {"time": datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), "add": address}
                 login_info[user_id]["history"].append(info)
             return "0"
@@ -54,27 +57,25 @@ def login_check(s,data, address):
             #SEND FAIL
             return "2"
     else:
-        if s.sendto('FAIL', address)!=0:
+        if s.sendto(b'FAIL', address) != 0:
             return "1"
         else:
             # SEND FAIL
             return "2"
-
 def exit_request(s,data, address):
     if login_info.__contains__(data["user"]):
-        login_info[data["user"]]["state"] = "False"
-        if s.sendto("0", address)!=0:
+        login_info[data["user"]]["state"] = False
+        if s.sendto(b"0", address)!=0:
             return "0"
         else:
             #SEND FAIL
             return "2"
     else:
-        if s.sendto("1", address) != 0:
+        if s.sendto(b"1", address) != 0:
             return "1"
         else:
             #SEND FAIL
             return "2"
-
 def enter_shop(s,data,address):
     if shop_list.__contains__(data["id"]):
         if shop_list[data["id"]]["state"] == "open":
@@ -83,7 +84,7 @@ def enter_shop(s,data,address):
             msg["id"] = data["id"]
             msg["name"] = shop_list[data["id"]]['name']
             msg = json.dumps(msg)
-            if s.sendto(msg, address) != 0:
+            if s.sendto(str.encode(msg), address) != 0:
                 #store online visitor
                 if shop_visit.__contains__(data["id"]):
                     if data["user"] not in shop_visit[data["id"]] and data['user'] != shop_list[data['id']]['owner']:
@@ -100,7 +101,7 @@ def enter_shop(s,data,address):
         elif shop_list[data["id"]]["state"] == "close":
              msg = {"state": "close", "goods": []}
              msg = json.dumps(msg)
-             if s.sendto(msg, address) != 0:
+             if s.sendto(str.encode(msg), address) != 0:
                  return "0"
              else:
                  # SEND FAIL
@@ -108,17 +109,15 @@ def enter_shop(s,data,address):
     else:
         msg = {"state": "null", "goods": []}
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "0"
         else:
             # SEND FAIL
             return "2"
-
-
 def leave_shop(s,data,address):
     if data["user"] == shop_list[data["id"]]["owner"]:
         msg = "0"
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "0"
         else:
             # SEND FAIL
@@ -129,26 +128,25 @@ def leave_shop(s,data,address):
                 if data["user"] in shop_visit[data["id"]]:
                     shop_visit[data["id"]].remove(data["user"])
                 msg="0"
-                if s.sendto(msg, address) != 0:
+                if s.sendto(str.encode(msg), address) != 0:
                     return "0"
                 else:
                     # SEND FAIL
                     return "2"
             else:
                 msg = "1"
-                if s.sendto(msg, address) != 0:
+                if s.sendto(str.encode(msg), address) != 0:
                     return "0"
                 else:
                     # SEND FAIL
                     return "2"
         else:
             msg = "1"
-            if s.sendto(msg, address) != 0:
+            if s.sendto(str.encode(msg), address) != 0:
                 return "0"
             else:
                 # SEND FAIL
                 return "2"
-
 def enter_own_shop(s,data,address):
     user = data["user"]
     if user_infomation[user]["shop"] != 0:
@@ -160,19 +158,18 @@ def enter_own_shop(s,data,address):
     else:
         msg = {"state": "null", "goods": []}
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "0"
         else:
             # SEND FAIL
             return "2"
-
 def show_custom(s,data,address):
     id = data["id"]
     msg={}
     if shop_visit.__contains__(id):
         msg[id] = shop_visit[id]
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "0"
         else:
             # SEND FAIL
@@ -180,7 +177,7 @@ def show_custom(s,data,address):
     else:
         msg[id] = []
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "0"
         else:
             # SEND FAIL
@@ -200,9 +197,17 @@ def has_shop(s,data,address):
             return "2"
 def load_info(s,data,address):
     if user_infomation.__contains__(data['user']):
-        msg = user_infomation[data["user"]]
+        user_id = data['user']
+        msg = user_infomation[user_id]
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
+            # send the msg in buffer:
+            if message.__contains__(user_id):
+                for i in range(len(message[user_id])):
+                    msg = message[user_id][i]
+                    address1 = login_info[user_id]['history'][-1]['add']
+                    send_message(msg['send'], msg['content'], msg['time'], address1)
+                message.pop(user_id)
             return "0"
         else:
             # SEND FAIL
@@ -210,22 +215,170 @@ def load_info(s,data,address):
     else:
         msg={}
         msg = json.dumps(msg)
-        if s.sendto(msg, address) != 0:
+        if s.sendto(str.encode(msg), address) != 0:
             return "1"
         else:
             # SEND FAIL
             return "2"
+def buy_goods(s,data,address):
+    goods_id = data['goods_id']
+    goods_name = data['goods_name']
+    shop_id = data['shop_id']
+    user=data['user']
+    num = data['num']
+    time_now = int(time.time())
+
+    time_local = time.localtime(time_now)
+
+    dt = time.strftime("%Y%m%d%M", time_local)
+
+    #the number of this shopping
+    shopping_num=dt + shop_id + goods_id + str(random.randint(1000, 9999))
+
+    msg = {'result':'success','shopping_num':shopping_num}
+    msg = json.dumps(msg)
+    if s.sendto(str.encode(msg), address) != 0:
+
+        #write recording
+        r_s = {'id':goods_id,
+               'shopping_num':shopping_num,
+               'num':num,
+               'time':time.strftime("%Y-%m-%d %H:%M:%S",time_local),
+               'user':user}
+        r_u = {'shop_name':shop_list[shop_id]['name'],
+               'shopping_num':shopping_num,
+               'num':num,
+               'time':time.strftime("%Y-%m-%d %H:%M:%S",time_local),
+               'goods_name':goods_name}
+
+        if sold_recording.__contains__(shop_id):
+            sold_recording[shop_id].append(r_s)
+        else:
+            sold_recording[shop_id] = []
+            sold_recording[shop_id].append(r_s)
+
+        if bought_recording.__contains__(user):
+            bought_recording[user].append(r_u)
+        else:
+            bought_recording[user] = []
+            bought_recording[user].append(r_u)
+
+        #send msg to owner
+        content = [{"title":"用户购买通知",
+                   "text":user+"用户购买了"+num+"件"+goods_name+",订单号为:"+shopping_num+"，请记得发货哦！"}]
+        send = ["商城管理员：小森"]
+        recv = [shop_list[shop_id]['owner']]
+        send_message_manage(content, recv, send)
+
+        #send msg to user
+        content1 = [{"title": "购买成功",
+                    "text":  "您购买了" + num + "件" + goods_name + ",订单号为:" + shopping_num + "，请记得查收哦！"}]
+        send1 = ["商城管理员：小森"]
+        recv1 = [user]
+        result = send_message_manage(content1, recv1, send1)
+
+        return "0"
+    else:
+        # SEND FAIL
+        return "2"
+
+def send_logininfo(s, data, address):
+    if login_info.__contains__(data['user']):
+        msg = login_info[data['user']]['history']
+    else:
+        msg = []
+    msg = json.dumps(msg)
+    if s.sendto(str.encode(msg), address) != 0:
+        return "0"
+    else:
+        # SEND FAIL
+        return "2"
+def send_shopping_recording(s, data, address):
+    if bought_recording.__contains__(data['user']):
+        msg = bought_recording[data['user']]
+    else:
+        msg = []
+    msg = json.dumps(msg)
+    if s.sendto(str.encode(msg), address) != 0:
+        return "0"
+    else:
+        # SEND FAIL
+        return "2"
+def send_sold_recording(s, data, address):
+    if sold_recording.__contains__(user_infomation[data['user']]['shop']):
+        msg = sold_recording[user_infomation[data['user']]['shop']]
+    else:
+        msg = []
+    msg = json.dumps(msg)
+    if s.sendto(str.encode(msg), address) != 0:
+        return "0"
+    else:
+        # SEND FAIL
+        return "2"
+# These are request fuction#
+
+#this function is to manage the message,it can divide different message situation:
+#If the recv not online,we just add the msg on our server
+#Parameter#
+#recv:root send msg to some users for some tips:list['user1','user2'...]
+#content:the msg should be send:list['content1','content2'...]
+#send:in fact,all the send are root,but we can use this parameter is just send of form
+def send_message_manage(content,recv,send):
+    #the send result,0 is success,1 is fail
+    result=[]
+
+    #the user online or not?
+    for i in range(len(recv)):
+        if (login_info.__contains__(recv[i]) == False) or (login_info[recv[i]]['state'] == False):
+            msg = {}
+            msg['send'] = send[i]
+            msg['time'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            msg['content'] = content
+            if message.__contains__(recv[i]):
+                message[recv[i]].append(msg)
+            else:
+                message[recv[i]]=[]
+                message[recv[i]].append(msg)
+            result.append(0)
+        else:
+            address = login_info[recv[i]]['history'][-1]['add']
+            if send_message(send[i],content[i],"",address) == 0:
+                result.append(0)
+            else:
+                result.append(1)
+
+    return result
+
+#this function is the true function to send a single message
+def send_message(send,content,time,address):
+    #when time is not null, the message should be send to the just logined user
+    if time=="":
+        time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    msg={}
+    msg['send'] = send
+    msg['time'] = time
+    msg['content'] = content
+
+    s = socket(AF_INET, SOCK_DGRAM)
+    s.connect(address)
+    msg = json.dumps(msg)
+    if s.sendall(msg.encode(encoding='utf-8')) != 0:
+        return 0
+    else:
+        # SEND FAIL
+        return 2
+
 def byteify(input):
         if isinstance(input, dict):
-            return {byteify(key): byteify(value) for key, value in input.iteritems()}
+            return {byteify(key): byteify(value) for key, value in input.items()}
         elif isinstance(input, list):
             return [byteify(element) for element in input]
-        elif isinstance(input, unicode):
+        elif isinstance(input, str):
             return input.encode('utf-8')
         else:
             return input
 #store the messge wait to send
-#{"recv":[{"send":"","time":"","content":""}]}
+#{"recv":[{"send":"","time":"","content":{"title":"","text":""}}]}
 message={}
 
 #the imformation for registered users
@@ -389,6 +542,12 @@ login_info={}
 #the shop visit list{"shopid":["userid","userid"]}
 shop_visit={}
 
+#the shop sold recording{'shop':[{'id':'','shopping_num':'','num':'','time':'','user':''}]}
+sold_recording={}
+
+#the user bought recording{'user':[{'shop_name':'','shopping_num':'','num':'','time':'','goods_name':''}]}
+bought_recording={}
+
 #the request function dict
 request_function={
     "load_info":load_info,
@@ -399,13 +558,16 @@ request_function={
     "leave_shop":leave_shop,
     "enter_own_shop":enter_own_shop,
     "show_custom":show_custom,
-    "has_shop":has_shop
+    "has_shop":has_shop,
+    "buy_goods":buy_goods,
+    "send_logininfo":send_logininfo,
+    "send_sold_recording":send_sold_recording,
+    "send_shopping_recording":send_shopping_recording
 }
 
 
 
-
-HOST = '10.105.69.173'
+HOST = '127.0.0.1'
 PORT = 62000
 
 s = socket(AF_INET,SOCK_DGRAM)
@@ -421,7 +583,6 @@ while True:
         break
 
     data = json.loads(data)
-    data = byteify(data)
 
     result = request_function[data["method"]](s,data,address)
 

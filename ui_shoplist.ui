@@ -235,178 +235,6 @@
     </item>
    </layout>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>680</x>
-     <y>150</y>
-     <width>75</width>
-     <height>431</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
-    <item>
-     <widget class="QPushButton" name="enter_shop_1">
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton#enter_shop_1
-{
-    font:36pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_shop_1:hover
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_shop_1:pressed
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_2">
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton#enter_shop_2
-{
-    font:36pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_shop_2:hover
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_shop_2:pressed
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_3">
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton#enter_shop_3
-{
-    font:36pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_shop_3:hover
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_shop_3:pressed
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_4">
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton#enter_shop_4
-{
-    font:36pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_shop_4:hover
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_shop_4:pressed
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QPushButton" name="enter_shop_5">
-      <property name="styleSheet">
-       <string notr="true">
-QPushButton#enter_shop_5
-{
-    font:36pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_shop_5:hover
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_shop_5:pressed
-{
-   font:36pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>→</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
   <widget class="QPushButton" name="exit">
    <property name="geometry">
     <rect>
@@ -1014,7 +842,7 @@ QPushButton#last_page:pressed
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QPushButton" name="enter_shop_6">
+  <widget class="QPushButton" name="see_msg">
    <property name="geometry">
     <rect>
      <x>800</x>
@@ -1170,10 +998,10 @@ color:white</string>
   <widget class="QLabel" name="custom">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>160</y>
+     <x>840</x>
+     <y>560</y>
      <width>120</width>
-     <height>411</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="text">
@@ -1183,14 +1011,141 @@ color:white</string>
   <widget class="QLabel" name="custom_head">
    <property name="geometry">
     <rect>
-     <x>800</x>
-     <y>120</y>
+     <x>840</x>
+     <y>590</y>
      <width>120</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
     <string>谁在我的店？？</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_1">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>190</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>×1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_2">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>270</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>×1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_3">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>360</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>×1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_4">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>440</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>×1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_5">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>520</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="maxLength">
+    <number>3</number>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>×1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="num_head">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>120</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>件数</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
@@ -1253,6 +1208,386 @@ color:white</string>
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="buy_good_1">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>190</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_1
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_1:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_1:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_3">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>360</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_3
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_3:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_3:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_4">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>440</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_4
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_4:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_4:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_2">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>270</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_2
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_2:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_2:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_5">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>520</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_5
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_5:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_5:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>260</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_2
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_2:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_2:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_1">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>180</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_1
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_1:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_1:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_5">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>510</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_5
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_5:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_5:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_3">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>350</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_3
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_3:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_3:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_4">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>430</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_4
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_4:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_4:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
   <zorder>label_4</zorder>
   <zorder>label_6</zorder>
   <zorder>username</zorder>
@@ -1282,7 +1617,7 @@ color:white</string>
   <zorder>shop_num</zorder>
   <zorder>page</zorder>
   <zorder>page_5</zorder>
-  <zorder>enter_shop_6</zorder>
+  <zorder>see_msg</zorder>
   <zorder>input_shop_id</zorder>
   <zorder>now_shop</zorder>
   <zorder>now_shop_head</zorder>
@@ -1291,6 +1626,13 @@ color:white</string>
   <zorder>msg_num</zorder>
   <zorder>custom</zorder>
   <zorder>custom_head</zorder>
+  <zorder>layoutWidget_2</zorder>
+  <zorder>num_1</zorder>
+  <zorder>num_2</zorder>
+  <zorder>num_3</zorder>
+  <zorder>num_4</zorder>
+  <zorder>num_5</zorder>
+  <zorder>num_head</zorder>
  </widget>
  <resources/>
  <connections/>
