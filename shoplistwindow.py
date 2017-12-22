@@ -5,6 +5,7 @@ from socket import *
 import json
 import threading
 from msgwindow import MsgBoxWindow
+from recordingwindow import RecordingBoxWindow
 # a dic to store the message recived
 def byteify(input):
     if isinstance(input, dict):
@@ -29,10 +30,8 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.setupUi(self)
         self.setFixedSize(self.width(), self.height())
 
-        # listen msg
-        thread_list = []
-        # print (address)
-        t = threading.Thread(target=self.listen_msg, args=(address,))
+        # listen msg by maintaining a long connection
+        t = threading.Thread(target=self.listen_msg, args=(user,))
         t.setDaemon(True)
         t.start()
 
@@ -63,6 +62,11 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.see_msg.clicked.connect(lambda :self.open_msgbox(self.r_msg))
         self.login_info.clicked.connect(self.get_logininfo)
         self.bought.clicked.connect(self.get_shopping_recording)
+        self.buy_good_1.clicked.connect(lambda :self.buy_goods(1))
+        self.buy_good_2.clicked.connect(lambda: self.buy_goods(2))
+        self.buy_good_3.clicked.connect(lambda: self.buy_goods(3))
+        self.buy_good_4.clicked.connect(lambda: self.buy_goods(4))
+        self.buy_good_5.clicked.connect(lambda: self.buy_goods(5))
 
     def getshop(self):
         host = '127.0.0.1'
@@ -165,7 +169,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         else:
             goods = self.enter_shop_request("6")
 
-        if (current+1)*5<=(int)(self.shop_num.text()):
+        if (current+1)*5<(int)(self.shop_num.text()):
             self.last_page.setHidden(False)
             self.next_page.setHidden(False)
             self.page.setText(str(current+1))
@@ -175,7 +179,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             else:
                 self.loadgood_range(current+1,goods)
 
-        elif (current+1)*5 > (int)(self.shop_num.text()):
+        elif (current+1)*5 >= (int)(self.shop_num.text()):
             self.last_page.setHidden(False)
             self.next_page.setHidden(True)
             self.page.setText(str(current + 1))
@@ -215,6 +219,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
     def modify_msgbox(self,data):
         self.r_msg.append(data)
         self.msg_num.setText(str(len(self.r_msg)))
+
     def open_msgbox(self,data):
         self.msgwindow = MsgBoxWindow(data)
         self.msgwindow.show()
@@ -526,18 +531,19 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         s = socket(AF_INET, SOCK_DGRAM)
         info = {"method": "send_logininfo", "user": self.username.text()}
         message = json.dumps(info)
+        data=""
         if s.connect((host, port)) == 0:
             return
         while True:
             s.sendall(message.encode(encoding='utf-8'))
             try:
-                data = s.recv(1024)
+                data = s.recv(4096)
             except IOError:
                 break
             data = json.loads(data)
-            print (data)
             break
-
+        self.recodwindow = RecordingBoxWindow("login", data)
+        self.recodwindow.show()
     def get_shopping_recording(self):
         host = '127.0.0.1'
         port = 62000
@@ -549,12 +555,13 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         while True:
             s.sendall(message.encode(encoding='utf-8'))
             try:
-                data = s.recv(1024)
+                data = s.recv(10240)
             except IOError:
                 break
             data = json.loads(data)
-            print(data)
             break
+        self.recodwindow = RecordingBoxWindow("buy", data)
+        self.recodwindow.show()
     def get_sold_recording(self):
         host = '127.0.0.1'
         port = 62000
@@ -566,27 +573,75 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         while True:
             s.sendall(message.encode(encoding='utf-8'))
             try:
+                data = s.recv(4096)
+            except IOError:
+                break
+            data = json.loads(data)
+            break
+        self.recodwindow = RecordingBoxWindow("sold", data)
+        self.recodwindow.show()
+    def buy_goods(self,i):
+        info_get={
+            "1g_id":self.shop_id_1.text,
+            "2g_id": self.shop_id_2.text,
+            "3g_id": self.shop_id_3.text,
+            "4g_id": self.shop_id_4.text,
+            "5g_id": self.shop_id_5.text,
+            "1g_name": self.shop_name_1.text,
+            "2g_name": self.shop_name_2.text,
+            "3g_name": self.shop_name_3.text,
+            "4g_name": self.shop_name_4.text,
+            "5g_name": self.shop_name_5.text,
+            "1_num": self.num_1.text,
+            "2_num": self.num_2.text,
+            "3_num": self.num_3.text,
+            "4_num": self.num_4.text,
+            "5_num": self.num_5.text,
+        }
+        host = '127.0.0.1'
+        port = 62000
+        s = socket(AF_INET, SOCK_DGRAM)
+        info = {"method":"buy_goods",
+                 "goods_id":info_get[str(i)+"g_id"](),
+                 "goods_name":info_get[str(i)+"g_name"](),
+                 "user":self.username.text(),
+                 "num":info_get[str(i)+"_num"](),
+                 "shop_id":self.now_shop.text()}
+
+        message = json.dumps(info)
+        if s.connect((host, port)) == 0:
+            return
+        while True:
+            s.sendall(message.encode(encoding='utf-8'))
+            try:
                 data = s.recv(1024)
             except IOError:
                 break
             data = json.loads(data)
-            print(data)
             break
+        msgwindow = MsgWindow("购买成功","订单号为:"+data['shopping_num']+"\n可以在购买记录中查看")
+        msgwindow.show()
 
     #recv message function
-    def listen_msg(self,address):
+    def listen_msg(self,user):
         s = socket(AF_INET, SOCK_DGRAM)
-        s.bind(address)
+        host = '127.0.0.1'
+        port = 62000
+        info = {"method":"listen","user":user}
+        message = json.dumps(info)
+        if s.connect((host, port)) == 0:
+            return
         while True:
-            data, address = s.recvfrom(4096)
-            if not data:
+            s.sendall(message.encode(encoding='utf-8'))
+            try:
+                data = s.recv(1024)
+            except IOError:
                 break
             data = json.loads(data)
 
             # some tips to tell the user
             self.modify_msgbox(data)
-
-
+            continue
 
 
 class MsgWindow(QtWidgets.QWidget):

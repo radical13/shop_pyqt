@@ -125,9 +125,15 @@ def leave_shop(s,data,address):
     else:
         if shop_visit.__contains__(data["id"]):
             if data["user"] in shop_visit[data["id"]]:
-                if data["user"] in shop_visit[data["id"]]:
-                    shop_visit[data["id"]].remove(data["user"])
+                shop_visit[data["id"]].remove(data["user"])
                 msg="0"
+
+                #send leave tip
+                content=[{'title':'离店通知','text':data['user']+"用户"+"离开了您的店"}]
+                recv=[shop_list[data['id']]['owner']]
+                send=["商城管理员：小森"]
+                send_message_manage(content,recv,send)
+
                 if s.sendto(str.encode(msg), address) != 0:
                     return "0"
                 else:
@@ -281,7 +287,13 @@ def buy_goods(s,data,address):
     else:
         # SEND FAIL
         return "2"
+def add_socket(s,data,address):
+    if socket_user.__contains__(data['user']) == False:
+        socket_user[data['user']] = {}
 
+    socket_user[data['user']]['socket'] = s
+    socket_user[data['user']]['add'] = address
+    return '0'
 def send_logininfo(s, data, address):
     if login_info.__contains__(data['user']):
         msg = login_info[data['user']]['history']
@@ -333,7 +345,7 @@ def send_message_manage(content,recv,send):
             msg = {}
             msg['send'] = send[i]
             msg['time'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-            msg['content'] = content
+            msg['content'] = content[i]
             if message.__contains__(recv[i]):
                 message[recv[i]].append(msg)
             else:
@@ -341,8 +353,9 @@ def send_message_manage(content,recv,send):
                 message[recv[i]].append(msg)
             result.append(0)
         else:
-            address = login_info[recv[i]]['history'][-1]['add']
-            if send_message(send[i],content[i],"",address) == 0:
+            address = socket_user[recv[i]]['add']
+            s = socket_user[recv[i]]['socket']
+            if send_message(send[i],content[i],"",address,s) == 0:
                 result.append(0)
             else:
                 result.append(1)
@@ -350,7 +363,7 @@ def send_message_manage(content,recv,send):
     return result
 
 #this function is the true function to send a single message
-def send_message(send,content,time,address):
+def send_message(send,content,time,address,s):
     #when time is not null, the message should be send to the just logined user
     if time=="":
         time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
@@ -359,10 +372,8 @@ def send_message(send,content,time,address):
     msg['time'] = time
     msg['content'] = content
 
-    s = socket(AF_INET, SOCK_DGRAM)
-    s.connect(address)
     msg = json.dumps(msg)
-    if s.sendall(msg.encode(encoding='utf-8')) != 0:
+    if s.sendto(str.encode(msg), address) != 0:
         return 0
     else:
         # SEND FAIL
@@ -377,6 +388,7 @@ def byteify(input):
             return input.encode('utf-8')
         else:
             return input
+
 #store the messge wait to send
 #{"recv":[{"send":"","time":"","content":{"title":"","text":""}}]}
 message={}
@@ -548,6 +560,9 @@ sold_recording={}
 #the user bought recording{'user':[{'shop_name':'','shopping_num':'','num':'','time':'','goods_name':''}]}
 bought_recording={}
 
+#the long connect socket for send message{"user1":{'socket':socket,'add':address}
+socket_user={}
+
 #the request function dict
 request_function={
     "load_info":load_info,
@@ -562,7 +577,8 @@ request_function={
     "buy_goods":buy_goods,
     "send_logininfo":send_logininfo,
     "send_sold_recording":send_sold_recording,
-    "send_shopping_recording":send_shopping_recording
+    "send_shopping_recording":send_shopping_recording,
+    'listen':add_socket
 }
 
 
@@ -586,7 +602,10 @@ while True:
 
     result = request_function[data["method"]](s,data,address)
 
+
     #write log
     output = open('log/log.txt', 'a')
-    output.write(data["method"]+":"+result+" "+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+'\n')
+    log = data["method"]+":"+result+" "+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+'\n'
+    print(log)
+    output.write(log)
     output.close()

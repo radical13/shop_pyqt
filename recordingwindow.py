@@ -6,15 +6,59 @@ from socket import *
 class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
     message = []
 
-    def __init__(self, msg, parent=None):
+
+    def __init__(self, type, msg,parent=None):
         super(RecordingBoxWindow, self).__init__(parent)
         self.setupUi(self)
-        for i in range(len(msg)):
-            self.message.append(msg[i])
-        self.loadmsg(msg)
+        init_f={"buy":self.init_buy,
+               "sold":self.init_sold,
+               "login":self.init_login}
+
+        init_f[type](msg)
+        self.loadmsg(self.message)
         self.next_page.clicked.connect(self.to_next_page)
         self.last_page.clicked.connect(self.to_last_page)
 
+    def init_buy(self,data):
+        self.setWindowTitle("购买记录")
+        self.send_head.setText("订单号")
+        self.shop_owner_head.setText("购买信息")
+        msg=[]
+
+        for i in range(len(data)):
+            m = {}
+            m['time'] = data[i]['time']
+            m['send'] = data[i]['shopping_num']
+            m['content'] = data[i]['goods_name'] + " × " +data[i]['num']
+            msg.append(m)
+        self.message = msg
+
+    def init_sold(self,data):
+        self.setWindowTitle("销售记录")
+        self.send_head.setText("订单号")
+        self.shop_owner_head.setText("销售信息")
+        msg = []
+
+        for i in range(len(data)):
+            m = {}
+            m['time'] = data[i]['time']
+            m['send'] = data[i]['shopping_num']
+            m['content'] = "向" + data[i]['user'] + "卖出" + data[i]['id'] + " × " + data[i]['num']
+            msg.append(m)
+        self.message = msg
+    def init_login(self,data):
+        self.setWindowTitle("登陆记录")
+        self.send_head.setText("编号")
+        self.shop_owner_head.setText("登陆位置")
+        msg = []
+
+        for i in range(len(data)):
+            m = {}
+            m['time'] = data[i]['time']
+            m['send'] = str(i+1)
+            m['content'] = str(data[i]['add'])
+            msg.append(m)
+        self.message = msg
     def loadmsg_range(self, r, data):
         if len(self.message) < r * 5:
             s_i = len(self.message) - 5 * (r - 1) + 1
@@ -24,8 +68,7 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
             method = "modify_msglist" + str(i)
             getattr(self, method)(data[(r - 1) * 5 + i - 1]['time'],
                                   data[(r - 1) * 5 + i - 1]['send'],
-                                  "[" + data[(r - 1) * 5 + i - 1]["content"]['title'] + "]\n" +
-                                  data[(r - 1) * 5 + i - 1]["content"]['text'])
+                                  data[(r - 1) * 5 + i - 1]["content"])
         for i in range(s_i, 6):
             method = "modify_msglist" + str(i)
             getattr(self, method)("", "", "")
@@ -94,7 +137,7 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
                 method = "modify_msglist" + str(i)
                 getattr(self, method)(data[i - 1]['time'],
                                       data[i - 1]['send'],
-                                      "[" + data[i - 1]["content"]['title'] + "]\n" + data[i - 1]["content"]['text'])
+                                      data[i - 1]["content"])
             self.last_page.setHidden(True)
             self.next_page.setHidden(True)
             self.msg_num.setText(str(msgnum))
@@ -104,8 +147,10 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
                 method = "modify_msglist" + str(i)
                 getattr(self, method)(data[i - 1]['time'],
                                       data[i - 1]['send'],
-                                      "[" + data[i - 1]["content"]['title'] + "]\n" + data[i - 1]["content"]['text'])
+                                      data[i - 1]["content"])
             self.last_page.setHidden(True)
             self.next_page.setHidden(False)
             self.msg_num.setText(str(msgnum))
         self.page.setText("1")
+
+

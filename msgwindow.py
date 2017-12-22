@@ -7,8 +7,8 @@ class MsgBoxWindow(QtWidgets.QWidget,Ui_msgbox):
     def __init__(self,msg,parent=None):
         super(MsgBoxWindow, self).__init__(parent)
         self.setupUi(self)
-        for i in range(len(msg)):
-            self.message.append(msg[i])
+
+        self.message = msg
         self.loadmsg(msg)
         self.next_page.clicked.connect(self.to_next_page)
         self.last_page.clicked.connect(self.to_last_page)

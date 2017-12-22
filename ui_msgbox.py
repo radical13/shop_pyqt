@@ -94,22 +94,22 @@ class Ui_msgbox(object):
         self.msg_num.setAlignment(QtCore.Qt.AlignCenter)
         self.msg_num.setObjectName("msg_num")
         self.time_head = QtWidgets.QLabel(msgbox)
-        self.time_head.setGeometry(QtCore.QRect(260, 50, 200, 20))
+        self.time_head.setGeometry(QtCore.QRect(280, 50, 220, 20))
         self.time_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.time_head.setAlignment(QtCore.Qt.AlignCenter)
         self.time_head.setObjectName("time_head")
         self.send_head = QtWidgets.QLabel(msgbox)
-        self.send_head.setGeometry(QtCore.QRect(90, 50, 130, 20))
+        self.send_head.setGeometry(QtCore.QRect(40, 50, 190, 20))
         self.send_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.send_head.setAlignment(QtCore.Qt.AlignCenter)
         self.send_head.setObjectName("send_head")
         self.shop_owner_head = QtWidgets.QLabel(msgbox)
-        self.shop_owner_head.setGeometry(QtCore.QRect(500, 50, 450, 20))
+        self.shop_owner_head.setGeometry(QtCore.QRect(520, 50, 440, 20))
         self.shop_owner_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.shop_owner_head.setAlignment(QtCore.Qt.AlignCenter)
         self.shop_owner_head.setObjectName("shop_owner_head")
         self.send_1 = QtWidgets.QLabel(msgbox)
-        self.send_1.setGeometry(QtCore.QRect(90, 90, 130, 51))
+        self.send_1.setGeometry(QtCore.QRect(40, 90, 190, 51))
         self.send_1.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -118,7 +118,7 @@ class Ui_msgbox(object):
         self.send_1.setAlignment(QtCore.Qt.AlignCenter)
         self.send_1.setObjectName("send_1")
         self.time_1 = QtWidgets.QLabel(msgbox)
-        self.time_1.setGeometry(QtCore.QRect(260, 90, 200, 51))
+        self.time_1.setGeometry(QtCore.QRect(280, 90, 220, 51))
         self.time_1.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -127,7 +127,7 @@ class Ui_msgbox(object):
         self.time_1.setAlignment(QtCore.Qt.AlignCenter)
         self.time_1.setObjectName("time_1")
         self.content_1 = QtWidgets.QLabel(msgbox)
-        self.content_1.setGeometry(QtCore.QRect(500, 90, 450, 51))
+        self.content_1.setGeometry(QtCore.QRect(520, 90, 440, 51))
         self.content_1.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -137,7 +137,7 @@ class Ui_msgbox(object):
         self.content_1.setWordWrap(True)
         self.content_1.setObjectName("content_1")
         self.time_2 = QtWidgets.QLabel(msgbox)
-        self.time_2.setGeometry(QtCore.QRect(260, 200, 200, 51))
+        self.time_2.setGeometry(QtCore.QRect(280, 200, 220, 51))
         self.time_2.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -146,7 +146,7 @@ class Ui_msgbox(object):
         self.time_2.setAlignment(QtCore.Qt.AlignCenter)
         self.time_2.setObjectName("time_2")
         self.content_2 = QtWidgets.QLabel(msgbox)
-        self.content_2.setGeometry(QtCore.QRect(500, 200, 450, 51))
+        self.content_2.setGeometry(QtCore.QRect(520, 200, 440, 51))
         self.content_2.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -156,7 +156,7 @@ class Ui_msgbox(object):
         self.content_2.setWordWrap(True)
         self.content_2.setObjectName("content_2")
         self.send_2 = QtWidgets.QLabel(msgbox)
-        self.send_2.setGeometry(QtCore.QRect(90, 200, 130, 51))
+        self.send_2.setGeometry(QtCore.QRect(40, 200, 190, 51))
         self.send_2.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -165,7 +165,7 @@ class Ui_msgbox(object):
         self.send_2.setAlignment(QtCore.Qt.AlignCenter)
         self.send_2.setObjectName("send_2")
         self.time_3 = QtWidgets.QLabel(msgbox)
-        self.time_3.setGeometry(QtCore.QRect(260, 310, 200, 51))
+        self.time_3.setGeometry(QtCore.QRect(280, 310, 220, 51))
         self.time_3.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -174,7 +174,7 @@ class Ui_msgbox(object):
         self.time_3.setAlignment(QtCore.Qt.AlignCenter)
         self.time_3.setObjectName("time_3")
         self.content_3 = QtWidgets.QLabel(msgbox)
-        self.content_3.setGeometry(QtCore.QRect(500, 310, 450, 51))
+        self.content_3.setGeometry(QtCore.QRect(520, 310, 440, 51))
         self.content_3.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -184,7 +184,7 @@ class Ui_msgbox(object):
         self.content_3.setWordWrap(True)
         self.content_3.setObjectName("content_3")
         self.send_3 = QtWidgets.QLabel(msgbox)
-        self.send_3.setGeometry(QtCore.QRect(90, 310, 130, 51))
+        self.send_3.setGeometry(QtCore.QRect(40, 310, 190, 51))
         self.send_3.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -193,7 +193,7 @@ class Ui_msgbox(object):
         self.send_3.setAlignment(QtCore.Qt.AlignCenter)
         self.send_3.setObjectName("send_3")
         self.content_5 = QtWidgets.QLabel(msgbox)
-        self.content_5.setGeometry(QtCore.QRect(510, 510, 450, 51))
+        self.content_5.setGeometry(QtCore.QRect(520, 510, 440, 51))
         self.content_5.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -203,7 +203,7 @@ class Ui_msgbox(object):
         self.content_5.setWordWrap(True)
         self.content_5.setObjectName("content_5")
         self.time_5 = QtWidgets.QLabel(msgbox)
-        self.time_5.setGeometry(QtCore.QRect(270, 510, 200, 51))
+        self.time_5.setGeometry(QtCore.QRect(280, 510, 220, 51))
         self.time_5.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -212,7 +212,7 @@ class Ui_msgbox(object):
         self.time_5.setAlignment(QtCore.Qt.AlignCenter)
         self.time_5.setObjectName("time_5")
         self.send_5 = QtWidgets.QLabel(msgbox)
-        self.send_5.setGeometry(QtCore.QRect(90, 510, 130, 51))
+        self.send_5.setGeometry(QtCore.QRect(40, 510, 190, 51))
         self.send_5.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -221,7 +221,7 @@ class Ui_msgbox(object):
         self.send_5.setAlignment(QtCore.Qt.AlignCenter)
         self.send_5.setObjectName("send_5")
         self.content_4 = QtWidgets.QLabel(msgbox)
-        self.content_4.setGeometry(QtCore.QRect(500, 420, 450, 51))
+        self.content_4.setGeometry(QtCore.QRect(520, 420, 440, 51))
         self.content_4.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -231,7 +231,7 @@ class Ui_msgbox(object):
         self.content_4.setWordWrap(True)
         self.content_4.setObjectName("content_4")
         self.time_4 = QtWidgets.QLabel(msgbox)
-        self.time_4.setGeometry(QtCore.QRect(260, 420, 200, 51))
+        self.time_4.setGeometry(QtCore.QRect(280, 420, 220, 51))
         self.time_4.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
@@ -240,7 +240,7 @@ class Ui_msgbox(object):
         self.time_4.setAlignment(QtCore.Qt.AlignCenter)
         self.time_4.setObjectName("time_4")
         self.send_4 = QtWidgets.QLabel(msgbox)
-        self.send_4.setGeometry(QtCore.QRect(90, 420, 130, 51))
+        self.send_4.setGeometry(QtCore.QRect(40, 420, 190, 51))
         self.send_4.setStyleSheet("font: 14pt \"Heiti SC\";\n"
 "\n"
 "\n"
