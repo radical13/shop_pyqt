@@ -65,6 +65,17 @@ def login_check(s,data, address):
 def exit_request(s,data, address):
     if login_info.__contains__(data["user"]):
         login_info[data["user"]]["state"] = False
+        for key in shop_visit:
+            for i in range(len(shop_visit[key])):
+                if shop_visit[key][i] == data['user']:
+                    shop_visit[key].remove(data['user'])
+                    print(shop_visit[key])
+                    # send leave tip
+                    content = [{'title': '离店通知', 'text': data['user'] + "用户" + "离开了您的店"}]
+                    recv = [shop_list[key]['owner']]
+                    send = ["商城管理员：小森"]
+                    send_message_manage(content, recv, send)
+                    break
         if s.sendto(b"0", address)!=0:
             return "0"
         else:
@@ -211,8 +222,11 @@ def load_info(s,data,address):
             if message.__contains__(user_id):
                 for i in range(len(message[user_id])):
                     msg = message[user_id][i]
-                    address1 = login_info[user_id]['history'][-1]['add']
-                    send_message(msg['send'], msg['content'], msg['time'], address1)
+                    send_message(msg['send'],
+                                 msg['content'],
+                                 msg['time'],
+                                 socket_user[user_id]['add'],
+                                 socket_user[user_id]['socket'])
                 message.pop(user_id)
             return "0"
         else:
@@ -250,7 +264,8 @@ def buy_goods(s,data,address):
                'shopping_num':shopping_num,
                'num':num,
                'time':time.strftime("%Y-%m-%d %H:%M:%S",time_local),
-               'user':user}
+               'user':user,
+               'goods_name': goods_name}
         r_u = {'shop_name':shop_list[shop_id]['name'],
                'shopping_num':shopping_num,
                'num':num,
@@ -317,8 +332,8 @@ def send_shopping_recording(s, data, address):
         # SEND FAIL
         return "2"
 def send_sold_recording(s, data, address):
-    if sold_recording.__contains__(user_infomation[data['user']]['shop']):
-        msg = sold_recording[user_infomation[data['user']]['shop']]
+    if sold_recording.__contains__(str(user_infomation[data['user']]['shop'])):
+        msg = sold_recording[str(user_infomation[data['user']]['shop'])]
     else:
         msg = []
     msg = json.dumps(msg)
@@ -327,6 +342,42 @@ def send_sold_recording(s, data, address):
     else:
         # SEND FAIL
         return "2"
+def add_goods(s,data,address):
+    flag = 0
+    if shop_list.__contains__(data['id']):
+        for i in range(len(shop_list[data['id']]['goods'])):
+            if shop_list[data['id']]['goods'][i]['id'] == data['goods_id']:
+                info = {"result": "id_fail"}
+                flag =1
+                break
+        if flag == 0:
+            good = {}
+            good['id'] = data['goods_id']
+            good['name'] = data['goods_name']
+            good['price'] = data['goods_price']
+            shop_list[data['id']]['goods'].append(good)
+            info = {"result" : "success"}
+
+            #send msg to the custom in this shop
+            if shop_visit.__contains__(data['id']):
+                recv = shop_visit[data["id"]]
+                send =[]
+                content=[]
+                for i in range(len(recv)):
+                    send.append(shop_list[data['id']]['name'])
+                    c = {}
+                    c['title'] = '新商品上架通知'
+                    c['text'] = shop_list[data['id']]['name']+"店上架了新商品："+data['goods_name']+",单价为:"+data['goods_price']
+                    content.append(c)
+                send_message_manage(content,recv,send)
+    else:
+        info = {"result" : "fail"}
+    msg = json.dumps(info)
+    if s.sendto(str.encode(msg), address) != 0:
+        return "0"
+    else:
+        return "2"
+
 # These are request fuction#
 
 #this function is to manage the message,it can divide different message situation:
@@ -578,7 +629,8 @@ request_function={
     "send_logininfo":send_logininfo,
     "send_sold_recording":send_sold_recording,
     "send_shopping_recording":send_shopping_recording,
-    'listen':add_socket
+    'listen':add_socket,
+    "add_goods":add_goods
 }
 
 
@@ -593,7 +645,7 @@ print('...waiting for message..')
 
 while True:
     print('server waiting')
-    data,address = s.recvfrom(1024)
+    data,address = s.recvfrom(2048)
 
     if not data:
         break

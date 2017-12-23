@@ -188,39 +188,15 @@ class Ui_Form(object):
 "}\n"
 "")
         self.bought.setObjectName("bought")
-        self.orders = QtWidgets.QPushButton(Form)
-        self.orders.setGeometry(QtCore.QRect(0, 250, 192, 32))
-        self.orders.setStyleSheet("QPushButton#orders\n"
-"{\n"
-"    font:12pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#orders:hover\n"
-"{\n"
-"   font:12pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#orders:pressed\n"
-"{\n"
-"   font:12pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"")
-        self.orders.setObjectName("orders")
         self.label_5 = QtWidgets.QLabel(Form)
-        self.label_5.setGeometry(QtCore.QRect(15, 325, 60, 16))
+        self.label_5.setGeometry(QtCore.QRect(15, 260, 60, 16))
         self.label_5.setStyleSheet("background:rgb(242, 242, 243);\n"
 "font: 15pt, \"Heiti SC\" ;\n"
 "color:rgb(102, 104, 104);\n"
 "")
         self.label_5.setObjectName("label_5")
         self.enter_my_shop = QtWidgets.QPushButton(Form)
-        self.enter_my_shop.setGeometry(QtCore.QRect(0, 370, 192, 32))
+        self.enter_my_shop.setGeometry(QtCore.QRect(0, 310, 192, 32))
         self.enter_my_shop.setStyleSheet("\n"
 "QPushButton#enter_my_shop\n"
 "{\n"
@@ -245,7 +221,7 @@ class Ui_Form(object):
 "")
         self.enter_my_shop.setObjectName("enter_my_shop")
         self.shop_custom = QtWidgets.QPushButton(Form)
-        self.shop_custom.setGeometry(QtCore.QRect(0, 440, 192, 32))
+        self.shop_custom.setGeometry(QtCore.QRect(0, 370, 192, 32))
         self.shop_custom.setStyleSheet("\n"
 "QPushButton#enter_my_shop_2\n"
 "{\n"
@@ -311,14 +287,14 @@ class Ui_Form(object):
         self.logo.setText("")
         self.logo.setObjectName("logo")
         self.label_7 = QtWidgets.QLabel(Form)
-        self.label_7.setGeometry(QtCore.QRect(15, 500, 60, 16))
+        self.label_7.setGeometry(QtCore.QRect(15, 550, 60, 16))
         self.label_7.setStyleSheet("background:rgb(242, 242, 243);\n"
 "font: 15pt, \"Heiti SC\" ;\n"
 "color:rgb(102, 104, 104);\n"
 "")
         self.label_7.setObjectName("label_7")
         self.login_info = QtWidgets.QPushButton(Form)
-        self.login_info.setGeometry(QtCore.QRect(0, 530, 192, 32))
+        self.login_info.setGeometry(QtCore.QRect(0, 580, 192, 32))
         self.login_info.setStyleSheet("\n"
 "QPushButton#login_info\n"
 "{\n"
@@ -342,31 +318,6 @@ class Ui_Form(object):
 "}\n"
 "")
         self.login_info.setObjectName("login_info")
-        self.pw_modify = QtWidgets.QPushButton(Form)
-        self.pw_modify.setGeometry(QtCore.QRect(0, 590, 192, 32))
-        self.pw_modify.setStyleSheet("\n"
-"QPushButton#enter_my_shop\n"
-"{\n"
-"    font:12pt,black;\n"
-"    background-color:white;\n"
-"    border-radius:5px;\n"
-"}\n"
-"\n"
-"QPushButton#enter_my_shop:hover\n"
-"{\n"
-"   font:12pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"}\n"
-"\n"
-"QPushButton#enter_my_shop:pressed\n"
-"{\n"
-"   font:12pt,rgb(0, 172, 230);\n"
-"    background-color:white;\n"
-"    padding-left:3px;\n"
-"    padding-top:3px;\n"
-"}\n"
-"")
-        self.pw_modify.setObjectName("pw_modify")
         self.next_page = QtWidgets.QPushButton(Form)
         self.next_page.setGeometry(QtCore.QRect(670, 610, 75, 40))
         self.next_page.setStyleSheet("\n"
@@ -520,14 +471,6 @@ class Ui_Form(object):
 "color:white")
         self.msg_num.setText("")
         self.msg_num.setObjectName("msg_num")
-        self.custom = QtWidgets.QLabel(Form)
-        self.custom.setGeometry(QtCore.QRect(840, 560, 120, 101))
-        self.custom.setText("")
-        self.custom.setObjectName("custom")
-        self.custom_head = QtWidgets.QLabel(Form)
-        self.custom_head.setGeometry(QtCore.QRect(840, 590, 120, 16))
-        self.custom_head.setAlignment(QtCore.Qt.AlignCenter)
-        self.custom_head.setObjectName("custom_head")
         self.num_1 = QtWidgets.QLineEdit(Form)
         self.num_1.setGeometry(QtCore.QRect(730, 190, 90, 23))
         self.num_1.setStyleSheet("font:18pt,black;\n"
@@ -569,6 +512,56 @@ class Ui_Form(object):
         self.num_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
         self.num_head.setAlignment(QtCore.Qt.AlignCenter)
         self.num_head.setObjectName("num_head")
+        self.enter_sold_recording = QtWidgets.QPushButton(Form)
+        self.enter_sold_recording.setGeometry(QtCore.QRect(0, 430, 192, 32))
+        self.enter_sold_recording.setStyleSheet("\n"
+"QPushButton#enter_sold_recording\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#enter_sold_recording:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#enter_sold_recording:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.enter_sold_recording.setObjectName("enter_sold_recording")
+        self.add_goods = QtWidgets.QPushButton(Form)
+        self.add_goods.setGeometry(QtCore.QRect(0, 490, 192, 32))
+        self.add_goods.setStyleSheet("\n"
+"QPushButton#add_goods\n"
+"{\n"
+"    font:12pt,black;\n"
+"    background-color:white;\n"
+"    border-radius:5px;\n"
+"}\n"
+"\n"
+"QPushButton#add_goods:hover\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"}\n"
+"\n"
+"QPushButton#add_goods:pressed\n"
+"{\n"
+"   font:12pt,rgb(0, 172, 230);\n"
+"    background-color:white;\n"
+"    padding-left:3px;\n"
+"    padding-top:3px;\n"
+"}\n"
+"")
+        self.add_goods.setObjectName("add_goods")
         self.shop_name_head = QtWidgets.QLabel(Form)
         self.shop_name_head.setGeometry(QtCore.QRect(250, 120, 129, 20))
         self.shop_name_head.setStyleSheet("font: 75 20pt \"Heiti SC\";")
@@ -856,7 +849,6 @@ class Ui_Form(object):
         self.head.raise_()
         self.good_sinfo.raise_()
         self.bought.raise_()
-        self.orders.raise_()
         self.label_5.raise_()
         self.enter_my_shop.raise_()
         self.shop_custom.raise_()
@@ -865,7 +857,6 @@ class Ui_Form(object):
         self.logo.raise_()
         self.label_7.raise_()
         self.login_info.raise_()
-        self.pw_modify.raise_()
         self.next_page.raise_()
         self.last_page.raise_()
         self.page3.raise_()
@@ -880,14 +871,14 @@ class Ui_Form(object):
         self.now_shop_name.raise_()
         self.back_shoplist.raise_()
         self.msg_num.raise_()
-        self.custom.raise_()
-        self.custom_head.raise_()
         self.num_1.raise_()
         self.num_2.raise_()
         self.num_3.raise_()
         self.num_4.raise_()
         self.num_5.raise_()
         self.num_head.raise_()
+        self.enter_sold_recording.raise_()
+        self.add_goods.raise_()
 
         self.retranslateUi(Form)
         QtCore.QMetaObject.connectSlotsByName(Form)
@@ -898,14 +889,12 @@ class Ui_Form(object):
         self.exit.setText(_translate("Form", "退出"))
         self.good_sinfo.setText(_translate("Form", "购物信息"))
         self.bought.setText(_translate("Form", "已购买商品"))
-        self.orders.setText(_translate("Form", "所有订单"))
         self.label_5.setText(_translate("Form", "店铺信息"))
         self.enter_my_shop.setText(_translate("Form", "我的店铺"))
-        self.shop_custom.setText(_translate("Form", "谁在逛我的店铺"))
+        self.shop_custom.setText(_translate("Form", "顾客信息"))
         self.enter_shop.setText(_translate("Form", "→"))
         self.label_7.setText(_translate("Form", "用户信息"))
         self.login_info.setText(_translate("Form", "登录记录"))
-        self.pw_modify.setText(_translate("Form", "修改密码"))
         self.next_page.setText(_translate("Form", "→"))
         self.last_page.setText(_translate("Form", "←"))
         self.page3.setText(_translate("Form", "共"))
@@ -915,13 +904,14 @@ class Ui_Form(object):
         self.input_shop_id.setPlaceholderText(_translate("Form", "输入店铺ID进入"))
         self.now_shop_head.setText(_translate("Form", "您当前在"))
         self.back_shoplist.setText(_translate("Form", "←"))
-        self.custom_head.setText(_translate("Form", "谁在我的店？？"))
         self.num_1.setPlaceholderText(_translate("Form", "×1"))
         self.num_2.setPlaceholderText(_translate("Form", "×1"))
         self.num_3.setPlaceholderText(_translate("Form", "×1"))
         self.num_4.setPlaceholderText(_translate("Form", "×1"))
         self.num_5.setPlaceholderText(_translate("Form", "×1"))
         self.num_head.setText(_translate("Form", "件数"))
+        self.enter_sold_recording.setText(_translate("Form", "销售信息"))
+        self.add_goods.setText(_translate("Form", "发布新商品"))
         self.shop_name_head.setText(_translate("Form", "店铺名"))
         self.shop_id_head.setText(_translate("Form", "ID"))
         self.shop_owner_head.setText(_translate("Form", "店  主"))

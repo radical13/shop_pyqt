@@ -85,7 +85,7 @@ class MsgBoxWindow(QtWidgets.QWidget,Ui_msgbox):
                 method = "modify_msglist" + str(i)
                 getattr(self, method)(data[i - 1]['time'],
                                       data[i - 1]['send'],
-                                     "[" +data[i - 1]["content"]['title']+"]\n"+data[i - 1]["content"]['text'])
+                                      "[" + data[i - 1]["content"]['title']+"]\n"+data[i - 1]["content"]['text'])
             self.last_page.setHidden(True)
             self.next_page.setHidden(True)
             self.msg_num.setText(str(msgnum))

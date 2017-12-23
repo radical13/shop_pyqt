@@ -12,7 +12,8 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
         self.setupUi(self)
         init_f={"buy":self.init_buy,
                "sold":self.init_sold,
-               "login":self.init_login}
+               "login":self.init_login,
+                'custom':self.init_custom}
 
         init_f[type](msg)
         self.loadmsg(self.message)
@@ -32,7 +33,20 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
             m['content'] = data[i]['goods_name'] + " × " +data[i]['num']
             msg.append(m)
         self.message = msg
+    def init_custom(self,data):
+        self.setWindowTitle("店内顾客")
+        self.send_head.setText("编号")
+        self.time_head.setText("店铺ID")
+        self.shop_owner_head.setText("顾客")
+        msg = []
 
+        for i in range(len(data['custom'])):
+            m = {}
+            m['time'] = data['id']
+            m['send'] = str(i+1)
+            m['content'] = data['custom'][i]
+            msg.append(m)
+        self.message = msg
     def init_sold(self,data):
         self.setWindowTitle("销售记录")
         self.send_head.setText("订单号")
@@ -43,7 +57,7 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
             m = {}
             m['time'] = data[i]['time']
             m['send'] = data[i]['shopping_num']
-            m['content'] = "向" + data[i]['user'] + "卖出" + data[i]['id'] + " × " + data[i]['num']
+            m['content'] = "向" + data[i]['user'] + "卖出" + data[i]['goods_name'] + " × " + data[i]['num']
             msg.append(m)
         self.message = msg
     def init_login(self,data):

@@ -361,47 +361,11 @@ QPushButton#bought:pressed
     <string>已购买商品</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="orders">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>250</y>
-     <width>192</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">QPushButton#orders
-{
-    font:12pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#orders:hover
-{
-   font:12pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#orders:pressed
-{
-   font:12pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>所有订单</string>
-   </property>
-  </widget>
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>325</y>
+     <y>260</y>
      <width>60</width>
      <height>16</height>
     </rect>
@@ -420,7 +384,7 @@ color:rgb(102, 104, 104);
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>370</y>
+     <y>310</y>
      <width>192</width>
      <height>32</height>
     </rect>
@@ -457,7 +421,7 @@ QPushButton#enter_my_shop:pressed
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>440</y>
+     <y>370</y>
      <width>192</width>
      <height>32</height>
     </rect>
@@ -487,7 +451,7 @@ QPushButton#enter_my_shop_2:pressed
 </string>
    </property>
    <property name="text">
-    <string>谁在逛我的店铺</string>
+    <string>顾客信息</string>
    </property>
   </widget>
   <widget class="QPushButton" name="enter_shop">
@@ -582,7 +546,7 @@ QPushButton#enter_shop:pressed
    <property name="geometry">
     <rect>
      <x>15</x>
-     <y>500</y>
+     <y>550</y>
      <width>60</width>
      <height>16</height>
     </rect>
@@ -601,7 +565,7 @@ color:rgb(102, 104, 104);
    <property name="geometry">
     <rect>
      <x>0</x>
-     <y>530</y>
+     <y>580</y>
      <width>192</width>
      <height>32</height>
     </rect>
@@ -632,43 +596,6 @@ QPushButton#login_info:pressed
    </property>
    <property name="text">
     <string>登录记录</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pw_modify">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>590</y>
-     <width>192</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">
-QPushButton#enter_my_shop
-{
-    font:12pt,black;
-    background-color:white;
-    border-radius:5px;
-}
-
-QPushButton#enter_my_shop:hover
-{
-   font:12pt,rgb(0, 172, 230);
-    background-color:white;
-}
-
-QPushButton#enter_my_shop:pressed
-{
-   font:12pt,rgb(0, 172, 230);
-    background-color:white;
-    padding-left:3px;
-    padding-top:3px;
-}
-</string>
-   </property>
-   <property name="text">
-    <string>修改密码</string>
    </property>
   </widget>
   <widget class="QPushButton" name="next_page">
@@ -995,35 +922,6 @@ color:white</string>
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="custom">
-   <property name="geometry">
-    <rect>
-     <x>840</x>
-     <y>560</y>
-     <width>120</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
-  <widget class="QLabel" name="custom_head">
-   <property name="geometry">
-    <rect>
-     <x>840</x>
-     <y>590</y>
-     <width>120</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>谁在我的店？？</string>
-   </property>
-   <property name="alignment">
-    <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
   <widget class="QLineEdit" name="num_1">
    <property name="geometry">
     <rect>
@@ -1149,6 +1047,80 @@ color:white</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_sold_recording">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>430</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_sold_recording
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_sold_recording:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_sold_recording:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>销售信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_goods">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>490</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#add_goods
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#add_goods:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#add_goods:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>发布新商品</string>
    </property>
   </widget>
   <widget class="QLabel" name="shop_name_head">
@@ -1600,7 +1572,6 @@ QPushButton#enter_shop_4:pressed
   <zorder>head</zorder>
   <zorder>good_sinfo</zorder>
   <zorder>bought</zorder>
-  <zorder>orders</zorder>
   <zorder>label_5</zorder>
   <zorder>enter_my_shop</zorder>
   <zorder>shop_custom</zorder>
@@ -1609,7 +1580,6 @@ QPushButton#enter_shop_4:pressed
   <zorder>logo</zorder>
   <zorder>label_7</zorder>
   <zorder>login_info</zorder>
-  <zorder>pw_modify</zorder>
   <zorder>next_page</zorder>
   <zorder>last_page</zorder>
   <zorder>page3</zorder>
@@ -1624,8 +1594,6 @@ QPushButton#enter_shop_4:pressed
   <zorder>now_shop_name</zorder>
   <zorder>back_shoplist</zorder>
   <zorder>msg_num</zorder>
-  <zorder>custom</zorder>
-  <zorder>custom_head</zorder>
   <zorder>layoutWidget_2</zorder>
   <zorder>num_1</zorder>
   <zorder>num_2</zorder>
@@ -1633,6 +1601,8 @@ QPushButton#enter_shop_4:pressed
   <zorder>num_4</zorder>
   <zorder>num_5</zorder>
   <zorder>num_head</zorder>
+  <zorder>enter_sold_recording</zorder>
+  <zorder>add_goods</zorder>
  </widget>
  <resources/>
  <connections/>

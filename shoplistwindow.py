@@ -6,7 +6,9 @@ import json
 import threading
 from msgwindow import MsgBoxWindow
 from recordingwindow import RecordingBoxWindow
-# a dic to store the message recived
+from inputwindow import InputWindow
+
+
 def byteify(input):
     if isinstance(input, dict):
         return {byteify(key): byteify(value) for key, value in input.items()}
@@ -19,8 +21,10 @@ def byteify(input):
 
 class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
 
+
     #msg list
     r_msg = []
+
 
     #now user information
     now_user_info ={}
@@ -67,7 +71,8 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.buy_good_3.clicked.connect(lambda: self.buy_goods(3))
         self.buy_good_4.clicked.connect(lambda: self.buy_goods(4))
         self.buy_good_5.clicked.connect(lambda: self.buy_goods(5))
-
+        self.enter_sold_recording.clicked.connect(self.get_sold_recording)
+        self.add_goods.clicked.connect(self.add_goods_request)
     def getshop(self):
         host = '127.0.0.1'
         port = 62000
@@ -219,7 +224,6 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
     def modify_msgbox(self,data):
         self.r_msg.append(data)
         self.msg_num.setText(str(len(self.r_msg)))
-
     def open_msgbox(self,data):
         self.msgwindow = MsgBoxWindow(data)
         self.msgwindow.show()
@@ -380,6 +384,9 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
                   "6": self.now_shop.text()
                   }
         shop_id = id_dic[num]
+        if shop_id == self.now_user_info['shop']:
+            self.enter_own_shop_request()
+            return
         info = {"method": "enter_shop", "id": str(shop_id), "user": self.username.text()}
         host = '127.0.0.1'
         port = 62000
@@ -397,17 +404,21 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if data:
                 goods = json.loads(data)
                 if goods["state"] == "open":
+                    if num == '0' and self.now_shop.text() != "":
+                        self.leave_shop()
                     self.now_shop.setText(str(shop_id))
                     # self.now_shop_name.setText()
                     self.load_goods(goods["goods"], goods["name"])
                     self.shop_custom.setHidden(False)
                     return goods["goods"]
-                    break
                 elif goods["state"] == "close":
                     # shop has closed
+                    self.msgwindow = MsgWindow("","此店铺已被关闭")
+                    self.msgwindow.show()
                     break
                 elif goods["state"] == "null":
-                    # no this shop
+                    self.msgwindow = MsgWindow("", "此店铺不存在")
+                    self.msgwindow.show()
                     break
             else:
                 continue
@@ -432,6 +443,18 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
                     self.now_shop.setText(goods["id"])
                     self.load_goods(goods["goods"], goods['name'])
                     self.shop_custom.setHidden(False)
+
+                    self.num_head.setHidden(True)
+                    self.num_1.setHidden(True)
+                    self.num_2.setHidden(True)
+                    self.num_3.setHidden(True)
+                    self.num_4.setHidden(True)
+                    self.num_5.setHidden(True)
+                    self.buy_good_1.setHidden(True)
+                    self.buy_good_2.setHidden(True)
+                    self.buy_good_3.setHidden(True)
+                    self.buy_good_4.setHidden(True)
+                    self.buy_good_5.setHidden(True)
                     return goods["goods"]
                 elif goods["state"] == "close":
                     # shop has closed
@@ -446,53 +469,42 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             else:
                 continue
     def back_list(self):
-        self.now_shop_head.setHidden(True)
-        self.now_shop.setHidden(True)
-        self.back_shoplist.setHidden(True)
-
-        self.num_head.setHidden(True)
-        self.num_1.setHidden(True)
-        self.num_2.setHidden(True)
-        self.num_3.setHidden(True)
-        self.num_4.setHidden(True)
-        self.num_5.setHidden(True)
-        self.buy_good_1.setHidden(True)
-        self.buy_good_2.setHidden(True)
-        self.buy_good_3.setHidden(True)
-        self.buy_good_4.setHidden(True)
-        self.buy_good_5.setHidden(True)
-        self.enter_shop_1.setHidden(False)
-        self.enter_shop_2.setHidden(False)
-        self.enter_shop_3.setHidden(False)
-        self.enter_shop_4.setHidden(False)
-        self.enter_shop_5.setHidden(False)
-
-        host = '127.0.0.1'
-        port = 62000
-        s = socket(AF_INET, SOCK_DGRAM)
-        info = {"method": "leave_shop", "user": self.username.text(), "id": self.now_shop.text()}
-        message = json.dumps(info)
-        if s.connect((host, port)) == 0:
-            return
-        while True:
-            s.sendall(message.encode(encoding='utf-8'))
-            try:
-                data = s.recv(4096)
-            except IOError:
-                break
-            if data == b"0":
-                shop = self.getshop()
-                self.loadshop(shop)
-                self.has_shop()
-                break
-            else:
-                print(data)
-                break
-    def has_shop(self):
-        if self.now_user_info["shop"] != 0:
-            self.shop_custom.setHidden(False)
+        if self.leave_shop() == 0:
+            self.now_shop_head.setHidden(True)
+            self.now_shop.setHidden(True)
+            self.back_shoplist.setHidden(True)
+            self.num_head.setHidden(True)
+            self.num_1.setHidden(True)
+            self.num_2.setHidden(True)
+            self.num_3.setHidden(True)
+            self.num_4.setHidden(True)
+            self.num_5.setHidden(True)
+            self.buy_good_1.setHidden(True)
+            self.buy_good_2.setHidden(True)
+            self.buy_good_3.setHidden(True)
+            self.buy_good_4.setHidden(True)
+            self.buy_good_5.setHidden(True)
+            self.enter_shop_1.setHidden(False)
+            self.enter_shop_2.setHidden(False)
+            self.enter_shop_3.setHidden(False)
+            self.enter_shop_4.setHidden(False)
+            self.enter_shop_5.setHidden(False)
+            self.now_shop.setText("")
+            shop = self.getshop()
+            self.loadshop(shop)
+            self.has_shop()
         else:
+            return
+    def has_shop(self):
+        if str(self.now_user_info["shop"]) == '0':
+
             self.shop_custom.setHidden(True)
+            self.enter_sold_recording.setHidden(True)
+            self.add_goods.setHidden(True)
+        else:
+            self.shop_custom.setHidden(False)
+            self.enter_sold_recording.setHidden(False)
+            self.add_goods.setHidden(False)
     def get_custom(self):
         host = '127.0.0.1'
         port = 62000
@@ -503,6 +515,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         else:
             info['id'] = self.now_user_info['shop']
         message = json.dumps(info)
+        data1={}
         if s.connect((host, port)) == 0:
             return
         while True:
@@ -512,19 +525,11 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             except IOError:
                 break
             data = json.loads(data)
-
-            data = data[info['id']]
-            if len(data) != 0:
-                self.custom.setHidden(False)
-                self.custom_head.setHidden(False)
-                str = ""
-                for i in range(len(data)):
-                    str = str + data[i] + "\n"
-                self.custom.setText(str)
-            else:
-                self.custom.setHidden(True)
-                self.custom_head.setHidden(True)
             break
+        data1['id'] = info['id']
+        data1['custom'] = data[info['id']]
+        self.recodwindow = RecordingBoxWindow("custom", data1)
+        self.recodwindow.show()
     def get_logininfo(self):
         host = '127.0.0.1'
         port = 62000
@@ -573,11 +578,12 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         while True:
             s.sendall(message.encode(encoding='utf-8'))
             try:
-                data = s.recv(4096)
+                data = s.recv(10240)
             except IOError:
                 break
             data = json.loads(data)
             break
+
         self.recodwindow = RecordingBoxWindow("sold", data)
         self.recodwindow.show()
     def buy_goods(self,i):
@@ -621,6 +627,29 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             break
         msgwindow = MsgWindow("购买成功","订单号为:"+data['shopping_num']+"\n可以在购买记录中查看")
         msgwindow.show()
+    def add_goods_request(self):
+        self.input_window = InputWindow(self.now_user_info['shop'])
+        self.input_window.show()
+    def leave_shop(self):
+        host = '127.0.0.1'
+        port = 62000
+        s = socket(AF_INET, SOCK_DGRAM)
+        info = {"method": "leave_shop", "user": self.username.text(), "id": self.now_shop.text()}
+        message = json.dumps(info)
+        if s.connect((host, port)) == 0:
+            return
+        while True:
+            s.sendall(message.encode(encoding='utf-8'))
+            try:
+                data = s.recv(1024)
+            except IOError:
+                break
+            if data == b"0":
+                return 0
+            else:
+                self.msgwindow = MsgWindow("", "离开店铺失败，请检查网络")
+                self.msgwindow.show()
+                return 1
 
     #recv message function
     def listen_msg(self,user):
@@ -647,6 +676,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
 class MsgWindow(QtWidgets.QWidget):
     def __init__(self,m1,m2):
         super().__init__()
+        self.setWindowTitle(m1)
         QMessageBox.information(self, m1, m2, QMessageBox.Yes)
 
 
