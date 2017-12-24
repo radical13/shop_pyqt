@@ -83,10 +83,10 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
         for i in range(len(data)):
             m = {}
             m['send'] = data[i]['id']
-            if m['state'] == False:
-                m['time'] = data[i]['name']+"当前离线"
+            if data[i]['state'] == False:
+                m['time'] = data[i]['name']+":当前离线"
             else:
-                m['time'] = data[i]['name'] + "当前在线"
+                m['time'] = data[i]['name'] + ":当前在线"
             m['content'] = data[i]['shop']
             msg.append(m)
         self.message = msg

@@ -132,12 +132,15 @@ class Server_InputWindow(QtWidgets.QWidget,Ui_input):
             shop_list[id]['state'] = 'close'
             self.msgwindow = MsgWindow("", "关闭成功")
             self.close()
-            recv = shop_visit[id]
+
+            recv=[]
             send = []
             content = []
-            for i in range(len(recv)):
-                send.append("商城管理员：小森")
-                content.append({"title":"店铺关闭","text":"您所逛的店铺已被关闭"})
+            if shop_visit.__contains__(id):
+                recv = shop_visit[id]
+                for i in range(len(recv)):
+                    send.append("商城管理员：小森")
+                    content.append({"title":"店铺关闭","text":"您所逛的店铺已被关闭"})
             recv.append(shop_list[id]['owner'])
             send.append("商城管理员：小森")
             content.append({"title": "店铺关闭", "text": "您的店铺已被关闭"})

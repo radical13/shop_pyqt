@@ -1,0 +1,1623 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>981</width>
+    <height>678</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background:white;
+</string>
+  </property>
+  <widget class="QLabel" name="username">
+   <property name="geometry">
+    <rect>
+     <x>599</x>
+     <y>15</y>
+     <width>151</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent;
+font: 14pt &quot;Heiti SC&quot; ;
+color:white;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>160</y>
+     <width>131</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QLabel" name="shop_name_1">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;
+
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_name_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_name_3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_name_4">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_name_5">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>160</y>
+     <width>121</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <item>
+     <widget class="QLabel" name="shop_id_1">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_id_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_id_3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_id_4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_id_5">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>160</y>
+     <width>101</width>
+     <height>421</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_4">
+    <item>
+     <widget class="QLabel" name="shop_owner_1">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_owner_2">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_owner_3">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_owner_4">
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLabel" name="shop_owner_5">
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Heiti SC&quot;;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="exit">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>10</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#exit
+{
+    font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+    border-radius:5px;
+}
+
+QPushButton#exit:hover
+{
+   font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+}
+
+QPushButton#exit:pressed
+{
+   font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_4">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>192</width>
+     <height>681</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(244, 244, 244)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="good_sinfo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(242, 242, 243);
+font: 15pt, &quot;Heiti SC&quot; ;
+color:rgb(102, 104, 104);
+</string>
+   </property>
+   <property name="text">
+    <string>购物信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="bought">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>180</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#bought
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#bought:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#bought:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>已购买商品</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_5">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>260</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(242, 242, 243);
+font: 15pt, &quot;Heiti SC&quot; ;
+color:rgb(102, 104, 104);
+</string>
+   </property>
+   <property name="text">
+    <string>店铺信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_my_shop">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>310</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_my_shop
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_my_shop:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_my_shop:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>我的店铺</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="shop_custom">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>370</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#shop_custom
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#shop_custom:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#shop_custom:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>顾客信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop">
+   <property name="geometry">
+    <rect>
+     <x>480</x>
+     <y>15</y>
+     <width>51</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_6">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>981</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(169, 19, 3)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="sline_2">
+   <property name="geometry">
+    <rect>
+     <x>860</x>
+     <y>0</y>
+     <width>1</width>
+     <height>60</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(143, 12, 4)</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="logo">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>200</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: transparent;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_7">
+   <property name="geometry">
+    <rect>
+     <x>15</x>
+     <y>550</y>
+     <width>60</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:rgb(242, 242, 243);
+font: 15pt, &quot;Heiti SC&quot; ;
+color:rgb(102, 104, 104);
+</string>
+   </property>
+   <property name="text">
+    <string>用户信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="login_info">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>580</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#login_info
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#login_info:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#login_info:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>登录记录</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="next_page">
+   <property name="geometry">
+    <rect>
+     <x>670</x>
+     <y>610</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#next_page
+{
+    font:24pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#next_page:hover
+{
+   font:24pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#next_page:pressed
+{
+   font:24pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="last_page">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>610</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#last_page
+{
+    font:24pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#last_page:hover
+{
+   font:24pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#last_page:pressed
+{
+   font:24pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>←</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="page3">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>610</y>
+     <width>41</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>共</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="page_2">
+   <property name="geometry">
+    <rect>
+     <x>440</x>
+     <y>610</y>
+     <width>121</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>家店铺 当前是第</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shop_num">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>610</y>
+     <width>61</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="page">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>610</y>
+     <width>61</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="page_5">
+   <property name="geometry">
+    <rect>
+     <x>630</x>
+     <y>610</y>
+     <width>51</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 16pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>页</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="see_msg">
+   <property name="geometry">
+    <rect>
+     <x>870</x>
+     <y>10</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#see_msg
+{
+    font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+    border-radius:5px;
+}
+
+QPushButton#see_msg:hover
+{
+   font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+}
+
+QPushButton#see_msg:pressed
+{
+   font:14pt,rgb(255, 255, 255);
+    background-color:transparent;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>30</width>
+     <height>30</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="input_shop_id">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>15</y>
+     <width>221</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="maxLength">
+    <number>5</number>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>输入店铺ID进入</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="now_shop">
+   <property name="geometry">
+    <rect>
+     <x>280</x>
+     <y>70</y>
+     <width>101</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="now_shop_head">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>80</y>
+     <width>61</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>您当前在</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="now_shop_name">
+   <property name="geometry">
+    <rect>
+     <x>400</x>
+     <y>70</y>
+     <width>151</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="back_shoplist">
+   <property name="geometry">
+    <rect>
+     <x>570</x>
+     <y>70</y>
+     <width>61</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#back_shoplist
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#back_shoplist:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#back_shoplist:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>←</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="msg_num">
+   <property name="geometry">
+    <rect>
+     <x>930</x>
+     <y>10</y>
+     <width>40</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background:transparent;
+color:white</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_1">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>190</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_2">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>270</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_3">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>360</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_4">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>440</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="num_5">
+   <property name="geometry">
+    <rect>
+     <x>730</x>
+     <y>520</y>
+     <width>90</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font:18pt,black;
+    background-color:white;
+    border-radius:5px;</string>
+   </property>
+   <property name="maxLength">
+    <number>3</number>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+   <property name="placeholderText">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="num_head">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>120</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>件数</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_sold_recording">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>430</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_sold_recording
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_sold_recording:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_sold_recording:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>销售信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="add_goods">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>490</y>
+     <width>192</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#add_goods
+{
+    font:12pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#add_goods:hover
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#add_goods:pressed
+{
+   font:12pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+</string>
+   </property>
+   <property name="text">
+    <string>发布新商品</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shop_name_head">
+   <property name="geometry">
+    <rect>
+     <x>250</x>
+     <y>120</y>
+     <width>129</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>店铺名</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shop_id_head">
+   <property name="geometry">
+    <rect>
+     <x>390</x>
+     <y>120</y>
+     <width>129</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>ID</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="shop_owner_head">
+   <property name="geometry">
+    <rect>
+     <x>550</x>
+     <y>120</y>
+     <width>99</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 75 20pt &quot;Heiti SC&quot;;</string>
+   </property>
+   <property name="text">
+    <string>店  主</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_1">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>190</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_1
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_1:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_1:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_3">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>360</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_3
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_3:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_3:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_4">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>440</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_4
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_4:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_4:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_2">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>270</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_2
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_2:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_2:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="buy_good_5">
+   <property name="geometry">
+    <rect>
+     <x>851</x>
+     <y>520</y>
+     <width>36</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#buy_good_5
+{
+    font:18pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#buy_good_5:hover
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#buy_good_5:pressed
+{
+   font:18pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>剁手</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_2">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>260</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_2
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_2:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_2:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_1">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>180</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_1
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_1:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_1:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_5">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>510</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_5
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_5:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_5:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_3">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>350</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_3
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_3:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_3:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="enter_shop_4">
+   <property name="geometry">
+    <rect>
+     <x>680</x>
+     <y>430</y>
+     <width>30</width>
+     <height>43</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">
+QPushButton#enter_shop_4
+{
+    font:36pt,black;
+    background-color:white;
+    border-radius:5px;
+}
+
+QPushButton#enter_shop_4:hover
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+}
+
+QPushButton#enter_shop_4:pressed
+{
+   font:36pt,rgb(0, 172, 230);
+    background-color:white;
+    padding-left:3px;
+    padding-top:3px;
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>→</string>
+   </property>
+  </widget>
+  <zorder>shop_name_head</zorder>
+  <zorder>shop_id_head</zorder>
+  <zorder>shop_owner_head</zorder>
+  <zorder>buy_good_1</zorder>
+  <zorder>buy_good_3</zorder>
+  <zorder>buy_good_4</zorder>
+  <zorder>buy_good_2</zorder>
+  <zorder>buy_good_5</zorder>
+  <zorder>enter_shop_2</zorder>
+  <zorder>enter_shop_1</zorder>
+  <zorder>enter_shop_5</zorder>
+  <zorder>enter_shop_3</zorder>
+  <zorder>enter_shop_4</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_6</zorder>
+  <zorder>username</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>layoutWidget</zorder>
+  <zorder>exit</zorder>
+  <zorder>good_sinfo</zorder>
+  <zorder>bought</zorder>
+  <zorder>label_5</zorder>
+  <zorder>enter_my_shop</zorder>
+  <zorder>shop_custom</zorder>
+  <zorder>enter_shop</zorder>
+  <zorder>sline_2</zorder>
+  <zorder>logo</zorder>
+  <zorder>label_7</zorder>
+  <zorder>login_info</zorder>
+  <zorder>next_page</zorder>
+  <zorder>last_page</zorder>
+  <zorder>page3</zorder>
+  <zorder>page_2</zorder>
+  <zorder>shop_num</zorder>
+  <zorder>page</zorder>
+  <zorder>page_5</zorder>
+  <zorder>see_msg</zorder>
+  <zorder>input_shop_id</zorder>
+  <zorder>now_shop</zorder>
+  <zorder>now_shop_head</zorder>
+  <zorder>now_shop_name</zorder>
+  <zorder>back_shoplist</zorder>
+  <zorder>msg_num</zorder>
+  <zorder>num_1</zorder>
+  <zorder>num_2</zorder>
+  <zorder>num_3</zorder>
+  <zorder>num_4</zorder>
+  <zorder>num_5</zorder>
+  <zorder>num_head</zorder>
+  <zorder>enter_sold_recording</zorder>
+  <zorder>add_goods</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

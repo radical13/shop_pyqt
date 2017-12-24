@@ -1,0 +1,13 @@
+missing module named nt - imported by os, ntpath, shutil, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named org - imported by pickle, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+excluded module named _frozen_importlib - imported by importlib, importlib.abc, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named _frozen_importlib_external - imported by importlib._bootstrap, importlib, importlib.abc, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named _winreg - imported by platform, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named java - imported by platform, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named 'java.lang' - imported by platform, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py, xml.sax._exceptions
+missing module named vms_lib - imported by platform, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named winreg - imported by platform, mimetypes, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py, urllib.request
+missing module named 'org.python' - imported by copy, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py, xml.sax
+missing module named msvcrt - imported by subprocess, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py, getpass
+missing module named _winapi - imported by subprocess, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py
+missing module named _dummy_threading - imported by dummy_threading, /Users/hushiyang/Documents/documents/2017.9秋季学期/数据通信与计算机网络/PJ/shop_pyqt/Simple_shop_client/client_main.py

@@ -1,0 +1,13 @@
+<RCC>
+  <qresource prefix="/" >
+    <file>img/exit.png</file>
+    <file>img/logo.png</file>
+    <file>img/mail.png</file>
+    <file>img/mail.png</file>
+    <file>img/neterror.png</file>
+    <file>img/pw.png</file>
+    <file>img/update.png</file>
+    <file>img/wrong_id.png</file>
+    <file>img/wrong_pw.png</file>
+  </qresource>
+</RCC>

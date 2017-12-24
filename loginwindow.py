@@ -7,6 +7,7 @@ import json
 import hashlib
 
 
+
 class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
     def __init__(self, parent=None):
         super(Loginwindow, self).__init__(parent)
@@ -44,12 +45,9 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
 
         info = {"method":"login_check","id": user_id, "pw": user_pw_md5}
         message = json.dumps(info)
-        if info_socket.connect((host, port)) == 0:
-            pixmap = QPixmap("img/neterror.png")
-            self.net_error.setPixmap(pixmap)
-            return
+
         while True:
-            info_socket.sendall(message.encode(encoding='utf-8'))
+            info_socket.sendto(message.encode(encoding='utf-8'),(host,port))
             try:
                 data = info_socket.recv(1024)
             except IOError:
