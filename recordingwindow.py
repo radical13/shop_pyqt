@@ -1,6 +1,5 @@
 from PyQt5.QtGui import QPixmap
 from ui_msgbox import *
-from socket import *
 
 
 class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
@@ -13,7 +12,8 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
         init_f={"buy":self.init_buy,
                "sold":self.init_sold,
                "login":self.init_login,
-                'custom':self.init_custom}
+                'custom':self.init_custom,
+                'user':self.init_user}
 
         init_f[type](msg)
         self.loadmsg(self.message)
@@ -71,6 +71,23 @@ class RecordingBoxWindow(QtWidgets.QWidget, Ui_msgbox):
             m['time'] = data[i]['time']
             m['send'] = str(i+1)
             m['content'] = str(data[i]['add'])
+            msg.append(m)
+        self.message = msg
+    def init_user(self,data):
+        self.setWindowTitle("用户信息")
+        self.send_head.setText("UserID")
+        self.time_head.setText("用户名")
+        self.shop_owner_head.setText("是否拥有店铺")
+        msg = []
+
+        for i in range(len(data)):
+            m = {}
+            m['send'] = data[i]['id']
+            if m['state'] == False:
+                m['time'] = data[i]['name']+"当前离线"
+            else:
+                m['time'] = data[i]['name'] + "当前在线"
+            m['content'] = data[i]['shop']
             msg.append(m)
         self.message = msg
     def loadmsg_range(self, r, data):

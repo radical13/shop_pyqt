@@ -442,38 +442,86 @@ def byteify(input):
 
 #store the messge wait to send
 #{"recv":[{"send":"","time":"","content":{"title":"","text":""}}]}
-message={}
+message = {}
 
 #the imformation for registered users
 user_infomation = {
-    #the manager root
-    'root':{
-        'pw':'SD58522',
-    },
     'hushiyang':{
         'pw':'KaJe2008',
         'sex':'M',
-        'shop':0
+        'shop':0,
+        'user_id':31241
     },
     '鼠小宝':{
         'pw':'123456',
         'sex':'F',
-        'shop':11323
+        'shop':11323,
+        'user_id':11323
     },
     'zhangsan':{
         'pw':'woaijiwang',
         'sex':'F',
-        'shop':0
+        'shop':0,
+        'user_id':13232
     },
     'Cook':{
-        'pw':'zuixihuanjiwangkele',
+        'pw':'zuixihuan',
         'sex':'M',
-        'shop':32423
-    }
+        'shop':32423,
+        'user_id':32423
+    },
+    '李昀锴':{
+            'pw':'zuixihuanjiwang',
+            'sex':'M',
+            'shop':10019,
+            'user_id':32423
+        },
+    '小炸':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':50344,
+            'user_id':50344
+        },
+    '卡姆式':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':90231,
+            'user_id':90231
+        },
+    '小p':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':38943,
+            'user_id':38943
+        },
+    '4.0':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':21340,
+            'user_id':21340
+        },
+    '小作坊':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':24330,
+            'user_id':24330
+        },
+    '陈欧':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':92310,
+            'user_id':92310
+        },
+    '2233':{
+            'pw':'woaijiwang',
+            'sex':'M',
+            'shop':79123,
+            'user_id':79123
+        }
 }
 
 #the imformation for shops
-shop_list ={
+shop_list = {
     '10019':{
         "name":"小米手机旗舰店",
         "owner":"李昀锴",
@@ -600,22 +648,22 @@ shop_list ={
 }
 
 #the login_state info
-login_info={}
+login_info = {}
 
 #the shop visit list{"shopid":["userid","userid"]}
-shop_visit={}
+shop_visit = {}
 
 #the shop sold recording{'shop':[{'id':'','shopping_num':'','num':'','time':'','user':''}]}
-sold_recording={}
+sold_recording = {}
 
 #the user bought recording{'user':[{'shop_name':'','shopping_num':'','num':'','time':'','goods_name':''}]}
-bought_recording={}
+bought_recording = {}
 
 #the long connect socket for send message{"user1":{'socket':socket,'add':address}
-socket_user={}
+socket_user = {}
 
 #the request function dict
-request_function={
+request_function = {
     "load_info":load_info,
     "login_check":login_check,
     "send_shoplist":send_shoplist,
@@ -633,31 +681,31 @@ request_function={
     "add_goods":add_goods
 }
 
+#the main listen function
+def listen_request():
+    HOST = '127.0.0.1'
+    PORT = 62000
 
+    s = socket(AF_INET, SOCK_DGRAM)
+    s.bind((HOST, PORT))
 
-HOST = '127.0.0.1'
-PORT = 62000
+    print('...waiting for message..')
 
-s = socket(AF_INET,SOCK_DGRAM)
-s.bind((HOST,PORT))
+    while True:
+        print('server waiting')
+        data, address = s.recvfrom(2048)
 
-print('...waiting for message..')
+        if not data:
+            continue
 
-while True:
-    print('server waiting')
-    data,address = s.recvfrom(2048)
+        data = json.loads(data)
 
-    if not data:
-        break
+        result = request_function[data["method"]](s, data, address)
 
-    data = json.loads(data)
+        # write log
+        output = open('log/log.txt', 'a')
+        log = data["method"] + ":" + result + " " + datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + '\n'
+        print(log)
+        output.write(log)
+        output.close()
 
-    result = request_function[data["method"]](s,data,address)
-
-
-    #write log
-    output = open('log/log.txt', 'a')
-    log = data["method"]+":"+result+" "+datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')+'\n'
-    print(log)
-    output.write(log)
-    output.close()

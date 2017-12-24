@@ -9,6 +9,8 @@ class InputWindow(QtWidgets.QWidget,Ui_input):
         super(InputWindow, self).__init__(parent)
         self.setupUi(self)
         self.submit.clicked.connect(lambda :self.add_goods(id))
+
+
     def add_goods(self,shop_id):
         if self.id.text() == "":
             self.id.setText("请输入新商品id")
@@ -50,10 +52,13 @@ class InputWindow(QtWidgets.QWidget,Ui_input):
             break
         if data['result'] == "success":
             self.msgwindow = MsgWindow("","商品"+goods_name+"添加成功！")
+            self.close()
         elif data['result'] == "id_fail":
             self.msgwindow = MsgWindow("", "商品" + goods_name + "添加失败！(ID重复)")
+            self.close()
         else:
             self.msgwindow = MsgWindow("", "商品" + goods_name + "添加失败！")
+            self.close()
 
 class MsgWindow(QtWidgets.QWidget):
     def __init__(self, m1, m2):

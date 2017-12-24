@@ -12,13 +12,16 @@ class Loginwindow(QtWidgets.QMainWindow, Ui_MainWindow):
         super(Loginwindow, self).__init__(parent)
         self.setupUi(self)
 
+        self.setWindowTitle("森普商城登陆")
         self.id_text.setAttribute(Qt.WA_MacShowFocusRect, False)
         self.pw_text.setAttribute(Qt.WA_MacShowFocusRect, False)
         self.loginbutton.clicked.connect(self.send_login_info)
+
         icon_see = QIcon("img/see.png")
         self.see_pw.setIcon(icon_see)
         self.see_pw.setIconSize(QSize(20,20))
         self.see_pw.show()
+
         self.see_pw.clicked.connect(self.seepw)
 
     def send_login_info(self):

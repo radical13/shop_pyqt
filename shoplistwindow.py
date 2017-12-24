@@ -1,5 +1,6 @@
-from PyQt5.QtGui import QPixmap
 from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtGui import *
+from PyQt5.QtCore import *
 from ui_shoplist import *
 from socket import *
 import json
@@ -33,6 +34,8 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         super(ShoplistWindow, self).__init__(parent)
         self.setupUi(self)
         self.setFixedSize(self.width(), self.height())
+        self.setWindowTitle("欢迎使用森普商城")
+        self.input_shop_id.setAttribute(Qt.WA_MacShowFocusRect, False)
 
         # listen msg by maintaining a long connection
         t = threading.Thread(target=self.listen_msg, args=(user,))
@@ -46,6 +49,14 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.loadshop(shops)
         self.has_shop()
         self.msg_num.setText(str(len(self.r_msg)))
+
+        #icon and some eles img
+        icon_exit = QIcon("img/exit.png")
+        icon_mail = QIcon("img/mail.png")
+
+        self.exit.setIcon(icon_exit)
+        self.see_msg.setIcon(icon_mail)
+
 
         pixmap = QPixmap("img/logo.png")
         self.logo.setPixmap(pixmap)
@@ -73,6 +84,12 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.buy_good_5.clicked.connect(lambda: self.buy_goods(5))
         self.enter_sold_recording.clicked.connect(self.get_sold_recording)
         self.add_goods.clicked.connect(self.add_goods_request)
+
+
+    def closeEvent(self,event):
+        self.exit_request()
+        event.accept()
+
     def getshop(self):
         host = '127.0.0.1'
         port = 62000
@@ -109,6 +126,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             if data:
                 user_info["shop"] = str(user_info['shop'])
                 return user_info
+
     #modify the shop list
     def modify_shoplist1(self,id,name,owner):
         self.shop_id_1.setText(id)
@@ -133,10 +151,19 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
 
     #show function
     def loadshop_range(self,r,data):
-        for i in range(1, 6):
-            method = "modify_shoplist" + str(i)
-            key = list(data.keys())[5*(r - 1)+i - 1]
-            getattr(self, method)(key, data[key]["name"], data[key]["owner"])
+        if 5 * r >= len(data):
+            for i in range(1,len(data) - 5 *(r - 1) + 1):
+                method = "modify_shoplist" + str(i)
+                key = list(data.keys())[5 * (r - 1) + i - 1]
+                getattr(self, method)(key, data[key]["name"], data[key]["owner"])
+            for i in range(len(data) - 5 * (r - 1) + 1, 6):
+                method = "modify_shoplist" + str(i)
+                getattr(self, method)("", "", "")
+        else:
+            for i in range(1,6):
+                method = "modify_shoplist" + str(i)
+                key = list(data.keys())[5 * (r - 1) + i - 1]
+                getattr(self, method)(key, data[key]["name"], data[key]["owner"])
     def loadgood_range(self,r,data):
         if 5 * r >= len(data):
             for i in range(1, len(data) - 5*(r-1) + 1):
@@ -209,6 +236,11 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             self.last_page.setHidden(True)
             self.next_page.setHidden(False)
             self.page.setText(str(current - 1))
+            self.enter_shop_1.setHidden(False)
+            self.enter_shop_2.setHidden(False)
+            self.enter_shop_3.setHidden(False)
+            self.enter_shop_4.setHidden(False)
+            self.enter_shop_5.setHidden(False)
             if  state =="店铺名":
                 self.loadshop_range(current-1,shops)
             else:
@@ -233,7 +265,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         self.shop_name_head.setText("店铺名")
         self.shop_owner_head.setText("拥有者")
         self.page_2.setText("个店铺 当前是第")
-
+        self.update()
         self.now_shop_head.setHidden(True)
         self.now_shop.setHidden(True)
         self.back_shoplist.setHidden(True)
@@ -338,11 +370,11 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
             hidden_operation[str(i) + "buy"](False)
             hidden_operation[str(i) + "shop"](True)
 
-        self.num_1.setText("×1")
-        self.num_2.setText("×1")
-        self.num_3.setText("×1")
-        self.num_4.setText("×1")
-        self.num_5.setText("×1")
+        self.num_1.setText("1")
+        self.num_2.setText("1")
+        self.num_3.setText("1")
+        self.num_4.setText("1")
+        self.num_5.setText("1")
 
         self.now_shop_head.setHidden(False)
         self.now_shop.setHidden(False)
@@ -629,6 +661,7 @@ class ShoplistWindow(QtWidgets.QWidget, Ui_Form):
         msgwindow.show()
     def add_goods_request(self):
         self.input_window = InputWindow(self.now_user_info['shop'])
+        self.input_window.setWindowTitle("商品上架")
         self.input_window.show()
     def leave_shop(self):
         host = '127.0.0.1'
